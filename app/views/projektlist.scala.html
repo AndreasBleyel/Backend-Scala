@@ -1,0 +1,13 @@
+@(projektList: List[Projekt])
+
+@main("Alle Projekte"){
+    <h1>Alle Projekte</h1>
+    <ul>
+    @for(projekt <- projektList){
+        <li>
+            @projekt.toString()
+        </li>
+    }
+    </ul>
+
+}

@@ -1,0 +1,23 @@
+@(userList: List[models.User])
+
+@main("Userlist"){
+    <h1>Alle Benutzer</h1>
+    <ul>
+        @for(user <- userList){
+            <li>
+                <a href="/user/@user.getId()">
+                @user.toString()
+                </a>
+                <a href="/deleteuser/@user.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                <ul>
+                    @for(tmpgroup <- user.getGroupList()){
+                    <li>@tmpgroup.getProjektName()</li>
+                }
+                </ul>
+            </li>
+        }
+    </ul>
+
+
+
+}

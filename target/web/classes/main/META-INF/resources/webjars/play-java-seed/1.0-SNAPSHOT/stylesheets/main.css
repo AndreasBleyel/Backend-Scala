@@ -1,0 +1,28 @@
+h1{
+    font-size: 25px;
+}
+h2{
+    font-size: 20px;
+}
+h3{
+    font-size: 18px;
+}
+h4{
+    font-size: 16px;
+}
+h5{
+    font-size: 14px;
+}
+.header{
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.navigation{
+    background-color: #f1f1f1;
+    height: 100vh;
+}
+
+.content{
+
+}

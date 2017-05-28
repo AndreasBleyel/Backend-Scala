@@ -1,0 +1,21 @@
+@(user: models.User, taskList: List[Task])
+
+@main("User"){
+    <h1>Benutzer</h1>
+    <div><b>Name:</b></div>
+    <div>@user.getFirstname() @user.getLastname()</div>
+
+    <br/>
+
+    <div><b>Email:</b></div>
+    <div>@user.getEmail()</div>
+
+    <ul>
+        @for(task <- taskList){
+            <li>
+                @task
+            </li>
+        }
+
+    </ul>
+}

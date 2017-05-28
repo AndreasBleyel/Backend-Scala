@@ -1,0 +1,26 @@
+@(taskForm: Form[Task], userList: List[User])
+
+@main("Neues Task"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Neues Task</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+        @helper.form(action = routes.TaskController.create()){
+            @helper.inputText(taskForm("taskName"), 'id -> "taskName", '_label -> "Taskname", 'class -> "form-control")
+
+            <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Anlegen </button>
+
+    @helper.select(
+        field = taskForm("tempUser"),
+        options = (userList.map(user => user.getId().toString -> user.userVorNachname())),
+        '_label -> "User",
+        'class -> "form-control"
+    )
+        }
+        </div>
+    </div>
+}
