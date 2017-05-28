@@ -27,10 +27,21 @@ public class ProjektController extends Controller {
         return ok(views.html.projektlist.render(projektList));
     }
 
+    public Result show(Long id){
+        Projekt projekt = Projekt.find.byId(id);
+
+        return ok(views.html.projekt.render(projekt));
+    }
+
     public Result create(){
         Form<Projekt> projektFrom = formFactory.form(Projekt.class);
         Projekt projekt = projektFrom.bindFromRequest().get();
         projekt.save();
         return redirect(routes.ProjektController.list());
     }
+
+    public Result delete(Long id){
+        return ok();
+    }
+
 }

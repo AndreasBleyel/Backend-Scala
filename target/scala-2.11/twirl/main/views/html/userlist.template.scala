@@ -31,27 +31,37 @@ class userlist extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Fo
 
 Seq[Any](format.raw/*1.31*/("""
 
-"""),_display_(/*3.2*/main("Userlist")/*3.18*/{_display_(Seq[Any](format.raw/*3.19*/("""
-    """),format.raw/*4.5*/("""<h1>Alle Benutzer</h1>
-    <ul>
-        """),_display_(/*6.10*/for(user <- userList) yield /*6.31*/{_display_(Seq[Any](format.raw/*6.32*/("""
-            """),format.raw/*7.13*/("""<li>
-                <a href="/user/"""),_display_(/*8.33*/user/*8.37*/.getId()),format.raw/*8.45*/("""">
-                """),_display_(/*9.18*/user/*9.22*/.toString()),format.raw/*9.33*/("""
-                """),format.raw/*10.17*/("""</a>
-                <a href="/deleteuser/"""),_display_(/*11.39*/user/*11.43*/.getId()),format.raw/*11.51*/("""" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
-                <ul>
-                    """),_display_(/*13.22*/for(tmpgroup <- user.getGroupList()) yield /*13.58*/{_display_(Seq[Any](format.raw/*13.59*/("""
-                    """),format.raw/*14.21*/("""<li>"""),_display_(/*14.26*/tmpgroup/*14.34*/.getProjektName()),format.raw/*14.51*/("""</li>
-                """)))}),format.raw/*15.18*/("""
-                """),format.raw/*16.17*/("""</ul>
-            </li>
-        """)))}),format.raw/*18.10*/("""
-    """),format.raw/*19.5*/("""</ul>
+    """),_display_(/*3.6*/main("Alle Mitarbeiter")/*3.30*/ {_display_(Seq[Any](format.raw/*3.32*/("""
+        """),format.raw/*4.9*/("""<h1>Alle Mitarbeiter</h1>
 
 
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>E-Mail</th>
+                    <th>Details</th>
+                    <th>Löschen</th>
+                </tr>
+            </thead>
+            <tbody>
+            """),_display_(/*18.14*/for(user <- userList) yield /*18.35*/ {_display_(Seq[Any](format.raw/*18.37*/("""
+                """),format.raw/*19.17*/("""<tr>
+                    <td>"""),_display_(/*20.26*/user/*20.30*/.getFirstname),format.raw/*20.43*/("""</td>
+                    <td>"""),_display_(/*21.26*/user/*21.30*/.getLastname),format.raw/*21.42*/("""</td>
+                    <td>"""),_display_(/*22.26*/user/*22.30*/.getEmail),format.raw/*22.39*/("""</td>
 
-""")))}))
+                    <td><a href="/user/"""),_display_(/*24.41*/user/*24.45*/.getId()),format.raw/*24.53*/("""" class="details-button"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    <td><a href="/deleteuser/"""),_display_(/*25.47*/user/*25.51*/.getId()),format.raw/*25.59*/("""" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                    </td>
+                </tr>
+            """)))}),format.raw/*28.14*/("""
+            """),format.raw/*29.13*/("""</tbody>
+        </table>
+    """)))}),format.raw/*31.6*/("""
+
+"""))
       }
     }
   }
@@ -71,11 +81,11 @@ Seq[Any](format.raw/*1.31*/("""
 object userlist extends userlist_Scope0.userlist
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Sun May 28 21:20:12 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/userlist.scala.html
-                  HASH: dfb0610144cc9162613fee25f1576583de7daba8
-                  MATRIX: 762->1|886->30|916->35|940->51|978->52|1010->58|1079->101|1115->122|1153->123|1194->137|1258->175|1270->179|1298->187|1345->208|1357->212|1388->223|1434->241|1505->285|1518->289|1547->297|1716->439|1768->475|1807->476|1857->498|1889->503|1906->511|1944->528|1999->552|2045->570|2111->605|2144->611
-                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|37->6|37->6|37->6|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|42->11|42->11|42->11|44->13|44->13|44->13|45->14|45->14|45->14|45->14|46->15|47->16|49->18|50->19
+                  HASH: 578199f30337c0168163f0dcd54486ca4083df01
+                  MATRIX: 762->1|886->30|920->39|952->63|991->65|1027->75|1442->463|1479->484|1519->486|1565->504|1623->535|1636->539|1670->552|1729->584|1742->588|1775->600|1834->632|1847->636|1877->645|1953->694|1966->698|1995->706|2150->834|2163->838|2192->846|2385->1008|2427->1022|2490->1055
+                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|49->18|49->18|49->18|50->19|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|55->24|55->24|55->24|56->25|56->25|56->25|59->28|60->29|62->31
                   -- GENERATED --
               */
           

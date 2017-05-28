@@ -39,7 +39,7 @@ Seq[Any](format.raw/*1.64*/("""
     </div>
 
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" id="form">
         """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.UserController.create())/*12.62*/{_display_(Seq[Any](format.raw/*12.63*/("""
             """),_display_(/*13.14*/helper/*13.20*/.inputText(userForm("firstname"), 'id -> "firstname", '_label -> "Vorname", 'class -> "form-control")),format.raw/*13.121*/("""
             """),_display_(/*14.14*/helper/*14.20*/.inputText(userForm("lastname"), '_label -> "Nachname", 'class -> "form-control")),format.raw/*14.101*/("""
@@ -49,7 +49,7 @@ Seq[Any](format.raw/*1.64*/("""
                 '_default -> "-- bitte Geschlecht wählen --",
                 'class -> "form-control"
             )),format.raw/*20.14*/("""
-            """),_display_(/*21.14*/helper/*21.20*/.inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")),format.raw/*21.95*/("""
+            """),_display_(/*21.14*/helper/*21.20*/.inputText(userForm("email"), '_label -> "Email", 'class -> "form-control required")),format.raw/*21.104*/("""
             """),_display_(/*22.14*/helper/*22.20*/.inputPassword(userForm("password"), '_label -> "Passwort", 'class -> "form-control")),format.raw/*22.105*/("""
             """),_display_(/*23.14*/helper/*23.20*/.select(
                 field = userForm("groupsholder"),
@@ -83,10 +83,10 @@ Seq[Any](format.raw/*1.64*/("""
 object newuser extends newuser_Scope0.newuser
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Sun May 28 22:01:37 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/newuser.scala.html
-                  HASH: acb755134bc21a5d4e51fa59d5588f7464635846
-                  MATRIX: 784->1|941->63|971->68|995->84|1033->85|1065->91|1276->275|1291->281|1346->327|1385->328|1427->343|1442->349|1565->450|1607->465|1622->471|1725->552|1767->567|1782->573|2054->824|2096->839|2111->845|2207->920|2249->935|2264->941|2371->1026|2413->1041|2428->1047|2747->1345|2791->1361|2986->1525|3023->1535
+                  HASH: c1d72a5d69ab35c334a44ecaa03a73ed56d5dc2c
+                  MATRIX: 784->1|941->63|971->68|995->84|1033->85|1065->91|1286->285|1301->291|1356->337|1395->338|1437->353|1452->359|1575->460|1617->475|1632->481|1735->562|1777->577|1792->583|2064->834|2106->849|2121->855|2227->939|2269->954|2284->960|2391->1045|2433->1060|2448->1066|2767->1364|2811->1380|3006->1544|3043->1554
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|43->12|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|54->23|60->29|62->31|63->32|64->33
                   -- GENERATED --
               */

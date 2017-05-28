@@ -71,7 +71,6 @@ public class Task extends Model {
 
     @Override
     public String toString() {
-        return String.format("%s %s", this.getTaskName(), this.getUser());
-
+        return String.format("%s", this.getTaskName());
     }
 }

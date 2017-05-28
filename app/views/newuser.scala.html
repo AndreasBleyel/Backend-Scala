@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" id="form">
         @helper.form(action = routes.UserController.create()){
             @helper.inputText(userForm("firstname"), 'id -> "firstname", '_label -> "Vorname", 'class -> "form-control")
             @helper.inputText(userForm("lastname"), '_label -> "Nachname", 'class -> "form-control")
@@ -18,7 +18,7 @@
                 '_default -> "-- bitte Geschlecht wählen --",
                 'class -> "form-control"
             )
-            @helper.inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")
+            @helper.inputText(userForm("email"), '_label -> "Email", 'class -> "form-control required")
             @helper.inputPassword(userForm("password"), '_label -> "Passwort", 'class -> "form-control")
             @helper.select(
                 field = userForm("groupsholder"),

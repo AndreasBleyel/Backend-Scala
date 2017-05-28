@@ -1,11 +1,37 @@
 @(projekt: models.Projekt)
 
-@main("Projekt"){
+@main("Projekt") {
 
-    <h1>Projekt</h1>
+    <h1>Projekt @projekt.getProjektName</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Auftraggeber</th>
+                <th>Mitarbeiter</th>
+                <th>Bearbeiten</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <div><b>Projektname:</b></div>
+            <tr>
+                <td>@projekt.getId</td>
+                <td>@projekt.getProjektName</td>
 
-    <div>@projekt.getProjektName()</div>
+                <td>Auftraggeber</td>
+                <td>
+                    @for(mitarbeiter <- projekt.getUserList()){
+                        <li>@mitarbeiter</li>
+                    }
+                </td>
+                <td><a href="#" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a href="/deleteprojekt/@projekt.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                </td>
+            </tr>
 
-    }
+        </tbody>
+    </table>
+
+}

@@ -29,6 +29,11 @@ public class TaskController extends Controller {
         return ok(views.html.tasklist.render(taskList));
     }
 
+    public Result show(Long id){
+        Task task = Task.find.byId(id);
+        return ok(views.html.task.render(task));
+    }
+
     public Result create() {
         Form<Task> taskForm = formFactory.form(Task.class);
         Task task = taskForm.bindFromRequest().get();

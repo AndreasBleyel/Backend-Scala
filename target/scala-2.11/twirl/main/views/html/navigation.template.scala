@@ -34,7 +34,7 @@ Seq[Any](format.raw/*1.4*/("""
     <div class="col-xs-12">
         <h5>Anzeigen</h5>
         <ul>
-            <li><a href="/user">Alle Benutzer</a></li>
+            <li><a href="/user">Alle Mitarbeiter</a></li>
             <li><a href="/projekt">Alle Projekte</a></li>
             <li><a href="/task">Alle Tasks</a></li>
         </ul>
@@ -44,7 +44,7 @@ Seq[Any](format.raw/*1.4*/("""
     <div class="col-xs-12">
         <h5>Anlegen</h5>
         <ul>
-            <li><a href="/adduser">Neuer Benutzer</a></li>
+            <li><a href="/adduser">Neuer Mitarbeiter</a></li>
             <li><a href="/addprojekt">Neues Projekt</a></li>
             <li><a href="/addtask">Neuer Task</a></li>
         </ul>
@@ -71,9 +71,9 @@ Seq[Any](format.raw/*1.4*/("""
 object navigation extends navigation_Scope0.navigation
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Sun May 28 22:14:13 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/navigation.scala.html
-                  HASH: fc85bd12c91efc471b5bb58a93b5dbafbf9dde19
+                  HASH: 45a183363a5a0ecc78a401c318aefd4c92ffdd0d
                   MATRIX: 748->1|844->3|872->5
                   LINES: 27->1|32->1|33->2
                   -- GENERATED --

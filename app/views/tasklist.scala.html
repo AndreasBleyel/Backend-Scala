@@ -2,12 +2,27 @@
 
 @main("Alle Tasks"){
     <h1>Alle Tasks</h1>
-    <ul>
-    @for(task <- taskList){
-        <li>
-        @task.toString()
-        </li>
-    }
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+
+                <th>Details</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(task <- taskList) {
+            <tr>
+                <td>@task.getId</td>
+                <td>@task.getTaskName</td>
+                <td><a href="/task/@task.getId()" class="details-button"><span class="glyphicon glyphicon-plus"></span></a></td>
+                <td><a href="/deletetask/@task.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 
 }

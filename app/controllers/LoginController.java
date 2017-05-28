@@ -31,10 +31,10 @@ public class LoginController extends Controller {
         if(user != null && user.getPassword().equals(login.getPassword())){
             return redirect(routes.HomeController.index());
         }
-        else
-            System.out.println("User not found");
+        else {
+            return redirect(routes.LoginController.login());
+        }
 
-        return ok();
     }
 
 }

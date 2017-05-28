@@ -23,6 +23,7 @@ public class UserController extends Controller {
 
     public Result list(){
         List<User> userList = User.find.all();
+
         return ok(views.html.userlist.render(userList));
     }
 
@@ -36,9 +37,9 @@ public class UserController extends Controller {
 
     public Result create(){
         Form<User> userForm = formFactory.form(User.class);
+
         User user = userForm.bindFromRequest().get();
 
-        System.out.println(user.groupsholder);
         List<Projekt> tmpGroups = new ArrayList<>();
         for(String id : user.groupsholder){
             Projekt grp = Projekt.find.byId(Long.parseLong(id));
@@ -54,8 +55,35 @@ public class UserController extends Controller {
         return redirect(routes.UserController.list());
     }
 
+    public Result editUser(Long id){
+        Form<User> userForm = formFactory.form(User.class).fill(User.find.byId(id));
+        List<Projekt> groupList = Projekt.find.all();
+        return ok(views.html.edituser.render(userForm, groupList, id));
+    }
+
     public Result update(Long id){
-        return ok("update");
+
+        Form<User> userForm = formFactory.form(User.class);
+        User oldUser = User.find.byId(id);
+
+        User updatedUser = userForm.bindFromRequest().get();
+
+        List<Projekt> tmpGroups = new ArrayList<>();
+        for(String projektId : updatedUser.groupsholder){
+            Projekt grp = Projekt.find.byId(Long.parseLong(projektId));
+            tmpGroups.add(grp);
+        }
+        updatedUser.setGroupList(tmpGroups);
+
+        oldUser.setLastname(updatedUser.getLastname());
+        oldUser.setFirstname(updatedUser.getFirstname());
+        oldUser.setGender(updatedUser.getGender());
+        oldUser.setEmail(updatedUser.getEmail());
+        oldUser.setPassword(updatedUser.getPassword());
+        oldUser.setGroupList(updatedUser.getGroupList());
+        oldUser.save();
+
+        return redirect(routes.UserController.list());
     }
 
     public Result delete(Long id){

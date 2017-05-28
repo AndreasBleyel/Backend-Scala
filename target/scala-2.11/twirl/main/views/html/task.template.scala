@@ -31,13 +31,35 @@ class task extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format
 
 Seq[Any](format.raw/*1.21*/("""
 
-"""),_display_(/*3.2*/main("Task")/*3.14*/{_display_(Seq[Any](format.raw/*3.15*/("""
+"""),_display_(/*3.2*/main("Task")/*3.14*/ {_display_(Seq[Any](format.raw/*3.16*/("""
 
-    """),format.raw/*5.5*/("""<h1>Task</h1>
+    """),format.raw/*5.5*/("""<h1>Task """),_display_(/*5.15*/task/*5.19*/.getTaskName),format.raw/*5.31*/(""" """),format.raw/*5.32*/("""Details</h1>
 
-    <div><b>Taskname:</b></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Mitarbeiter</th>
+                <th>Projekt</th>
+                <th>Bearbeiten</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <div>"""),_display_(/*9.11*/task/*9.15*/.getTaskName()),format.raw/*9.29*/("""</div>
+            <tr>
+                <td>"""),_display_(/*21.22*/task/*21.26*/.getId),format.raw/*21.32*/("""</td>
+                <td>"""),_display_(/*22.22*/task/*22.26*/.getTaskName),format.raw/*22.38*/("""</td>
+                <td><a href="/user/"""),_display_(/*23.37*/task/*23.41*/.getUser.getId),format.raw/*23.55*/("""">"""),_display_(/*23.58*/task/*23.62*/.getUser),format.raw/*23.70*/("""</a></td>
+                <td>Projekt</td>
+                <td><a href="/task/"""),_display_(/*25.37*/task/*25.41*/.getId()),format.raw/*25.49*/("""" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a href="/deletetask/"""),_display_(/*26.43*/task/*26.47*/.getId()),format.raw/*26.55*/("""" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 
 """)))}))
       }
@@ -59,11 +81,11 @@ Seq[Any](format.raw/*1.21*/("""
 object task extends task_Scope0.task
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Sun May 28 21:47:46 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/task.scala.html
-                  HASH: 830bc49e9d4a712fac55573790169bf68801f628
-                  MATRIX: 748->1|862->20|890->23|910->35|948->36|980->42|1064->100|1076->104|1110->118
-                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|40->9|40->9|40->9
+                  HASH: 9b3ea588019d851ca43ae38dd661191f2f5080f0
+                  MATRIX: 748->1|862->20|890->23|910->35|949->37|981->43|1017->53|1029->57|1061->69|1089->70|1490->444|1503->448|1530->454|1584->481|1597->485|1630->497|1699->539|1712->543|1747->557|1777->560|1790->564|1819->572|1925->651|1938->655|1967->663|2119->788|2132->792|2161->800
+                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|36->5|36->5|36->5|36->5|52->21|52->21|52->21|53->22|53->22|53->22|54->23|54->23|54->23|54->23|54->23|54->23|56->25|56->25|56->25|57->26|57->26|57->26
                   -- GENERATED --
               */
           

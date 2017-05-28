@@ -33,13 +33,28 @@ Seq[Any](format.raw/*1.30*/("""
 
 """),_display_(/*3.2*/main("Alle Projekte")/*3.23*/{_display_(Seq[Any](format.raw/*3.24*/("""
     """),format.raw/*4.5*/("""<h1>Alle Projekte</h1>
-    <ul>
-    """),_display_(/*6.6*/for(projekt <- projektList) yield /*6.33*/{_display_(Seq[Any](format.raw/*6.34*/("""
-        """),format.raw/*7.9*/("""<li>
-            """),_display_(/*8.14*/projekt/*8.21*/.toString()),format.raw/*8.32*/("""
-        """),format.raw/*9.9*/("""</li>
-    """)))}),format.raw/*10.6*/("""
-    """),format.raw/*11.5*/("""</ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
+        """),_display_(/*15.10*/for(projekt <- projektList) yield /*15.37*/ {_display_(Seq[Any](format.raw/*15.39*/("""
+            """),format.raw/*16.13*/("""<tr>
+                <td>"""),_display_(/*17.22*/projekt/*17.29*/.getId),format.raw/*17.35*/("""</td>
+                <td>"""),_display_(/*18.22*/projekt/*18.29*/.getProjektName),format.raw/*18.44*/("""</td>
+
+                <td><a href="/projekt/"""),_display_(/*20.40*/projekt/*20.47*/.getId()),format.raw/*20.55*/("""" class="details-button"><span class="glyphicon glyphicon-plus"></span></a></td>
+                <td><a href="/deleteprojekt/"""),_display_(/*21.46*/projekt/*21.53*/.getId()),format.raw/*21.61*/("""" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                </td>
+            </tr>
+        """)))}),format.raw/*24.10*/("""
+        """),format.raw/*25.9*/("""</tbody>
+    </table>
 
 """)))}))
       }
@@ -61,11 +76,11 @@ Seq[Any](format.raw/*1.30*/("""
 object projektlist extends projektlist_Scope0.projektlist
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Sun May 28 21:46:58 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/projektlist.scala.html
-                  HASH: 156056512dca285a3d41c3b6fd596547c92fe6de
-                  MATRIX: 764->1|887->29|917->34|946->55|984->56|1016->62|1080->101|1122->128|1160->129|1196->139|1241->158|1256->165|1287->176|1323->186|1365->198|1398->204
-                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|37->6|37->6|37->6|38->7|39->8|39->8|39->8|40->9|41->10|42->11
+                  HASH: d9e9f0bddf2cd5aa54fd625b3b342d499f6f3a2a
+                  MATRIX: 764->1|887->29|917->34|946->55|984->56|1016->62|1334->353|1377->380|1417->382|1459->396|1513->423|1529->430|1556->436|1611->464|1627->471|1663->486|1738->534|1754->541|1783->549|1937->676|1953->683|1982->691|2163->841|2200->851
+                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|46->15|46->15|46->15|47->16|48->17|48->17|48->17|49->18|49->18|49->18|51->20|51->20|51->20|52->21|52->21|52->21|55->24|56->25
                   -- GENERATED --
               */
           

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Sun May 28 18:10:14 CEST 2017
+// @DATE:Sun May 28 23:32:25 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:41
+  // @LINE:45
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:41
+    // @LINE:45
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -28,19 +28,19 @@ package controllers {
   
   }
 
-  // @LINE:11
+  // @LINE:12
   class ReverseUserController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:15
+    // @LINE:16
     def delete(id:Long): Call = {
     
       (id: @unchecked) match {
       
-        // @LINE:15
+        // @LINE:16
         case (id)  =>
           import ReverseRouteContext.empty
           Call("DELETE", _prefix + { _defaultPrefix } + "user/" + implicitly[PathBindable[Long]].unbind("id", id))
@@ -49,31 +49,37 @@ package controllers {
     
     }
   
-    // @LINE:12
+    // @LINE:13
     def show(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "user/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:13
+    // @LINE:14
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "user")
     }
   
-    // @LINE:14
+    // @LINE:15
     def update(id:Long): Call = {
       import ReverseRouteContext.empty
-      Call("PUT", _prefix + { _defaultPrefix } + "user/" + implicitly[PathBindable[Long]].unbind("id", id))
+      Call("POST", _prefix + { _defaultPrefix } + "user/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:11
+    // @LINE:20
+    def editUser(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "edituser/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:12
     def list(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "user")
     }
   
-    // @LINE:17
+    // @LINE:18
     def newUser(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "adduser")
@@ -103,7 +109,7 @@ package controllers {
     }
 
   
-    // @LINE:38
+    // @LINE:42
     def authenticate(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "login")
@@ -125,56 +131,74 @@ package controllers {
   
   }
 
-  // @LINE:23
+  // @LINE:24
   class ReverseProjektController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
+    // @LINE:28
+    def delete(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("DELETE", _prefix + { _defaultPrefix } + "deleteprojekt" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+    }
+  
+    // @LINE:26
+    def show(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "projekt/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
     // @LINE:25
-    def newProjekt(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "addprojekt")
-    }
-  
-    // @LINE:23
-    def list(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "projekt")
-    }
-  
-    // @LINE:24
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "projekt")
     }
   
+    // @LINE:27
+    def newProjekt(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "addprojekt")
+    }
+  
+    // @LINE:24
+    def list(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "projekt")
+    }
+  
   }
 
-  // @LINE:31
+  // @LINE:34
   class ReverseTaskController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:31
+    // @LINE:34
     def list(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "task")
     }
   
-    // @LINE:32
+    // @LINE:35
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "task")
     }
   
-    // @LINE:33
+    // @LINE:36
     def newTask(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "addtask")
+    }
+  
+    // @LINE:37
+    def show(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "task/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
   }

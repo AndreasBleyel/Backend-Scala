@@ -32,7 +32,7 @@ class header extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Form
 Seq[Any](format.raw/*1.4*/("""
 """),format.raw/*2.1*/("""<div class="row">
     <div class="col-xs-6">
-        <h1>My Login Application</h1>
+        <h1>Super Tool</h1>
     </div>
 </div>"""))
       }
@@ -54,9 +54,9 @@ Seq[Any](format.raw/*1.4*/("""
 object header extends header_Scope0.header
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Sun May 28 20:55:07 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/header.scala.html
-                  HASH: 15c501681bbe20434571d90082be45c669c846ff
+                  HASH: b7015c8a76e491fc2941798229d31d185f9741fd
                   MATRIX: 740->1|836->3|864->5
                   LINES: 27->1|32->1|33->2
                   -- GENERATED --

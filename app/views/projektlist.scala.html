@@ -2,12 +2,27 @@
 
 @main("Alle Projekte"){
     <h1>Alle Projekte</h1>
-    <ul>
-    @for(projekt <- projektList){
-        <li>
-            @projekt.toString()
-        </li>
-    }
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(projekt <- projektList) {
+            <tr>
+                <td>@projekt.getId</td>
+                <td>@projekt.getProjektName</td>
+
+                <td><a href="/projekt/@projekt.getId()" class="details-button"><span class="glyphicon glyphicon-plus"></span></a></td>
+                <td><a href="/deleteprojekt/@projekt.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 
 }

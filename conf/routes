@@ -7,22 +7,25 @@ GET           /                      controllers.LoginController.login()
 
 GET           /main                  controllers.HomeController.index()
 
+# Mitarbeiter
 
 GET           /user                  controllers.UserController.list()
 GET           /user/:id              controllers.UserController.show(id: Long)
 POST          /user                  controllers.UserController.create()
-PUT           /user/:id              controllers.UserController.update(id: Long)
+POST          /user/:id              controllers.UserController.update(id :Long)
 DELETE        /user/:id              controllers.UserController.delete(id: Long)
 
 GET           /adduser               controllers.UserController.newUser()
 GET           /deleteuser/:id        controllers.UserController.delete(id: Long)
-
+GET           /edituser/:id          controllers.UserController.editUser(id: Long)
 
 # Projekte
 
 GET           /projekt               controllers.ProjektController.list()
 POST          /projekt               controllers.ProjektController.create()
+GET           /projekt/:id           controllers.ProjektController.show(id: Long)
 GET           /addprojekt            controllers.ProjektController.newProjekt()
+DELETE        /deleteprojekt         controllers.ProjektController.delete(id: Long)
 
 
 
@@ -31,6 +34,7 @@ GET           /addprojekt            controllers.ProjektController.newProjekt()
 GET           /task                  controllers.TaskController.list()
 POST          /task                  controllers.TaskController.create()
 GET           /addtask               controllers.TaskController.newTask()
+GET           /task/:id              controllers.TaskController.show(id: Long)
 
 # Login
 

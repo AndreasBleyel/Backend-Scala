@@ -1,0 +1,35 @@
+@(userForm: play.data.Form[models.User], groups: List[Projekt], userid: Long)
+
+@main("Mitarbeiter bearbeiten"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Mitarbeiter bearbeiten</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+        @helper.form(action = routes.UserController.update(userid)){
+            @helper.inputText(userForm("firstname"), 'id -> "firstname", '_label -> "Vorname", 'class -> "form-control")
+            @helper.inputText(userForm("lastname"), '_label -> "Nachname", 'class -> "form-control")
+            @helper.select(userForm("gender"),
+                helper.options(Seq("männlich", "weiblich")),
+                '_label -> "Geschlecht",
+                '_default -> "-- bitte Geschlecht wählen --",
+                'class -> "form-control"
+            )
+            @helper.inputText(userForm("email"), '_label -> "Email", 'class -> "form-control required")
+            @helper.inputPassword(userForm("password"), '_label -> "Passwort", 'class -> "form-control")
+            @helper.select(
+                field = userForm("groupsholder"),
+                options = (groups.map(group => group.getId().toString() -> group.getProjektName())),
+                '_label -> "Gruppe",
+                'class -> "form-control",
+                'multiple -> "Multiple"
+            )
+
+            <button type="submit" class="btn btn-success" value="Aendern" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Ändern </button>
+        }
+        </div>
+    </div>
+}

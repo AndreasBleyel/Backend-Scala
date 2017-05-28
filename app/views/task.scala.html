@@ -1,11 +1,33 @@
 @(task: models.Task)
 
-@main("Task"){
+@main("Task") {
 
-    <h1>Task</h1>
+    <h1>Task @task.getTaskName Details</h1>
 
-    <div><b>Taskname:</b></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Mitarbeiter</th>
+                <th>Projekt</th>
+                <th>Bearbeiten</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <div>@task.getTaskName()</div>
+            <tr>
+                <td>@task.getId</td>
+                <td>@task.getTaskName</td>
+                <td><a href="/user/@task.getUser.getId">@task.getUser</a></td>
+                <td>Projekt</td>
+                <td><a href="/task/@task.getId()" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a href="/deletetask/@task.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 
 }
