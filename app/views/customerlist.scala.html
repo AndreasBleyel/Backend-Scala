@@ -1,0 +1,31 @@
+@(customerList: List[models.Customer])
+
+@main("Alle Kunden") {
+    <h1>Alle Kunden</h1>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>E-Mail</th>
+                <th>Details</th>
+                <th>Löschen</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(customer <- customerList) {
+            <tr>
+                <td>@customer.getFirstname</td>
+                <td>@customer.getLastname</td>
+                <td>@customer.getEmail</td>
+
+                <td><a href="/customer/@customer.getId()" class="details-button"><span class="glyphicon glyphicon-plus"></span></a></td>
+                <td><a href="/deletecustomer/@customer.getId()" class="btn btn-danger" onclick="return confirm('Kunde wird gelöscht!');"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+

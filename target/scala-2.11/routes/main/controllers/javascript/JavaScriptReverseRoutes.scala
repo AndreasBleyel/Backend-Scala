@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Sun May 28 23:32:25 CEST 2017
+// @DATE:Mon May 29 22:10:19 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:45
+  // @LINE:58
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,12 +23,96 @@ package controllers.javascript {
     }
 
   
-    // @LINE:45
+    // @LINE:58
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
         function(file1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:34
+  class ReverseCustomerController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:39
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.delete",
+      """
+        function(id0) {
+        
+          if (true) {
+            return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "customer/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:36
+    def show: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.show",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "customer/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+    // @LINE:37
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "customer"})
+        }
+      """
+    )
+  
+    // @LINE:38
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.update",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "updatecustomer/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+    // @LINE:41
+    def newCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.newCustomer",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addcustomer"})
+        }
+      """
+    )
+  
+    // @LINE:34
+    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.list",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "customer"})
+        }
+      """
+    )
+  
+    // @LINE:43
+    def editCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CustomerController.editCustomer",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "editcustomer/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
         }
       """
     )
@@ -82,7 +166,7 @@ package controllers.javascript {
       "controllers.UserController.update",
       """
         function(id0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "user/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "updateuser/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
         }
       """
     )
@@ -147,7 +231,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:42
+    // @LINE:55
     def authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.authenticate",
       """
@@ -233,7 +317,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:34
+  // @LINE:47
   class ReverseTaskController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -241,7 +325,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:34
+    // @LINE:47
     def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TaskController.list",
       """
@@ -251,7 +335,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:48
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TaskController.create",
       """
@@ -261,7 +345,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:36
+    // @LINE:49
     def newTask: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TaskController.newTask",
       """
@@ -271,7 +355,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:50
     def show: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TaskController.show",
       """

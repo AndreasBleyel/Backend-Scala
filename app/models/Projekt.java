@@ -2,10 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -18,8 +15,11 @@ public class Projekt extends Model {
 
     private String projektName;
 
-    @ManyToMany(mappedBy = "groupList")
+    @ManyToMany(mappedBy = "groupList", cascade = CascadeType.ALL)
     private List<User> userList;
+
+    @ManyToOne
+    private Customer customer;
 
     public Projekt() {
     }
@@ -58,5 +58,13 @@ public class Projekt extends Model {
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

@@ -12,12 +12,13 @@ import javax.persistence.*;
 public class Task extends Model {
 
     @Id
+    @Column(name = "task_id")
     private Long id;
 
     private String taskName;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    //@JoinColumn(name = "user_id")
     private User user;
 
     @Transient

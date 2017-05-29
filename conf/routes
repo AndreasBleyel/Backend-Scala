@@ -3,43 +3,56 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET           /                      controllers.LoginController.login()
+GET           /                          controllers.LoginController.login()
 
-GET           /main                  controllers.HomeController.index()
+GET           /main                      controllers.HomeController.index()
 
 # Mitarbeiter
 
-GET           /user                  controllers.UserController.list()
-GET           /user/:id              controllers.UserController.show(id: Long)
-POST          /user                  controllers.UserController.create()
-POST          /user/:id              controllers.UserController.update(id :Long)
-DELETE        /user/:id              controllers.UserController.delete(id: Long)
+GET           /user                      controllers.UserController.list()
+GET           /user/:id                  controllers.UserController.show(id: Long)
+POST          /user                      controllers.UserController.create()
+POST          /updateuser/:id            controllers.UserController.update(id :Long)
+DELETE        /user/:id                  controllers.UserController.delete(id: Long)
 
-GET           /adduser               controllers.UserController.newUser()
-GET           /deleteuser/:id        controllers.UserController.delete(id: Long)
-GET           /edituser/:id          controllers.UserController.editUser(id: Long)
+GET           /adduser                   controllers.UserController.newUser()
+GET           /deleteuser/:id            controllers.UserController.delete(id: Long)
+GET           /edituser/:id              controllers.UserController.editUser(id: Long)
 
 # Projekte
 
-GET           /projekt               controllers.ProjektController.list()
-POST          /projekt               controllers.ProjektController.create()
-GET           /projekt/:id           controllers.ProjektController.show(id: Long)
-GET           /addprojekt            controllers.ProjektController.newProjekt()
-DELETE        /deleteprojekt         controllers.ProjektController.delete(id: Long)
+GET           /projekt                   controllers.ProjektController.list()
+POST          /projekt                   controllers.ProjektController.create()
+GET           /projekt/:id               controllers.ProjektController.show(id: Long)
+GET           /addprojekt                controllers.ProjektController.newProjekt()
+DELETE        /deleteprojekt             controllers.ProjektController.delete(id: Long)
 
+#GET /editprojekt/:id    controllers.ProjektController.editProjekt(id: Long)
 
+# Kunden
+
+GET           /customer                  controllers.CustomerController.list()
+
+GET           /customer/:id              controllers.CustomerController.show(id: Long)
+POST          /customer                  controllers.CustomerController.create()
+POST          /updatecustomer/:id        controllers.CustomerController.update(id :Long)
+DELETE        /customer/:id              controllers.CustomerController.delete(id: Long)
+
+GET           /addcustomer               controllers.CustomerController.newCustomer()
+GET           /deletecustomer/:id        controllers.CustomerController.delete(id: Long)
+GET           /editcustomer/:id          controllers.CustomerController.editCustomer(id: Long)
 
 # Tasks
 
-GET           /task                  controllers.TaskController.list()
-POST          /task                  controllers.TaskController.create()
-GET           /addtask               controllers.TaskController.newTask()
-GET           /task/:id              controllers.TaskController.show(id: Long)
+GET           /task                      controllers.TaskController.list()
+POST          /task                      controllers.TaskController.create()
+GET           /addtask                   controllers.TaskController.newTask()
+GET           /task/:id                  controllers.TaskController.show(id: Long)
 
 # Login
 
-GET           /login                 controllers.LoginController.login()
-POST          /login                 controllers.LoginController.authenticate()
+GET           /login                     controllers.LoginController.login()
+POST          /login                     controllers.LoginController.authenticate()
 
 # Map static resources from the /public folder to the /assets URL path
-GET           /assets/*file          controllers.Assets.versioned(path="/public", file: Asset)
+GET           /assets/*file              controllers.Assets.versioned(path="/public", file: Asset)

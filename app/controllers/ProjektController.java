@@ -44,4 +44,9 @@ public class ProjektController extends Controller {
         return ok();
     }
 
+   /* public Result editProjekt(Long id){
+        Form<Projekt> projektForm = formFactory.form(Projekt.class).fill(Projekt.find.byId(id));
+        List<Projekt> groupList = Projekt.find.all();
+        return ok(views.html.editprojekt.render(projektForm, groupList, id));
+    }*/
 }

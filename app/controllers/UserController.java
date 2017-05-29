@@ -30,7 +30,12 @@ public class UserController extends Controller {
     public Result show(Long id){
         User user = User.find.byId(id);
 
-        List<Task> taskList = Task.find.where().like("user_id", user.getId().toString()).findList();
+        //unidirektional
+        List<Task> taskList = Task.find.where().like("user_user_id", user.getId().toString()).findList();
+
+        //bidirektional
+        //for(Task task : user.getTaskList())
+        //    System.out.println("All TAsks: "+task+" - ");
 
         return ok(views.html.user.render(user, taskList));
     }

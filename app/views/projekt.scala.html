@@ -8,7 +8,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Auftraggeber</th>
+                <th>Kunde</th>
                 <th>Mitarbeiter</th>
                 <th>Bearbeiten</th>
                 <th>Löschen</th>
@@ -20,13 +20,21 @@
                 <td>@projekt.getId</td>
                 <td>@projekt.getProjektName</td>
 
-                <td>Auftraggeber</td>
                 <td>
-                    @for(mitarbeiter <- projekt.getUserList()){
-                        <li>@mitarbeiter</li>
-                    }
-                </td>
-                <td><a href="#" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                @if(projekt.getCustomer == null) {
+                    Kein Kunde zugeteilt
+                } else {
+                    @projekt.getCustomer</td>
+                }<td>
+            @if(projekt.getUserList().isEmpty) {
+                Kein Mitarbeiter zugeteilt
+            } else {
+                @for(mitarbeiter <- projekt.getUserList()) {
+                    <li>@mitarbeiter</li>
+                }
+            }
+            </td>
+                <td><a href="/editprojekt/@projekt.getId()" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td><a href="/deleteprojekt/@projekt.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
                 </td>
             </tr>

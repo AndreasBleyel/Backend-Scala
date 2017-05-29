@@ -23,27 +23,26 @@ public class User extends Model {
     @Transient
     public List<String> groupsholder;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Projekt> groupList;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Task> taskList;
+
+    public List<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List<Task> taskList) {
+        this.taskList = taskList;
+    }
 
     public User(){
 
     }
 
-    public User(Long id, String firstname, String lastname, String gender, String email, String password) {
-        this.setId(id);
-        this.setFirstname(firstname);
-        this.setLastname(lastname);
-        this.setGender(gender);
-        this.setEmail(email);
-        this.setPassword(password);
-    }
-
     @Override
     public String toString(){
-
-
         return String.format("%s %s (%s)", this.getFirstname(), this.getLastname(), this.getEmail());
     }
 

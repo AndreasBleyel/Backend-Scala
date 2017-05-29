@@ -49,21 +49,20 @@ Seq[Any](format.raw/*1.43*/("""
                 <div class="col-xs-12">
 
                     <h1>Login</h1><br>
-                    <p>Enter your e-Mail and Password to login</p>
 
-                    """),_display_(/*24.22*/helper/*24.28*/.form(action = routes.LoginController.authenticate())/*24.81*/ {_display_(Seq[Any](format.raw/*24.83*/("""
-                        """),_display_(/*25.26*/helper/*25.32*/.inputText(loginForm("email"), 'id -> "email", '_label -> "E-Mail", 'class -> "form-control")),format.raw/*25.125*/("""
-                        """),_display_(/*26.26*/helper/*26.32*/.inputPassword(loginForm("password"), '_label -> "Password", 'class -> "form-control")),format.raw/*26.118*/("""
+                    """),_display_(/*23.22*/helper/*23.28*/.form(action = routes.LoginController.authenticate())/*23.81*/ {_display_(Seq[Any](format.raw/*23.83*/("""
+                        """),_display_(/*24.26*/helper/*24.32*/.inputText(loginForm("email"), 'id -> "email", '_label -> "E-Mail", 'class -> "form-control")),format.raw/*24.125*/("""
+                        """),_display_(/*25.26*/helper/*25.32*/.inputPassword(loginForm("password"), '_label -> "Password", 'class -> "form-control")),format.raw/*25.118*/("""
 
-                        """),format.raw/*28.25*/("""<button type="submit" value="Login" ><span aria-hidden="true"></span> Login </button>
-                    """)))}),format.raw/*29.22*/("""
-                """),format.raw/*30.17*/("""</div>
+                        """),format.raw/*27.25*/("""<button type="submit" value="Login" ><span aria-hidden="true"></span> Login </button>
+                    """)))}),format.raw/*28.22*/("""
+                """),format.raw/*29.17*/("""</div>
             </div>
         </div>
 
-        <script src=""""),_display_(/*34.23*/routes/*34.29*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*34.74*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*35.23*/routes/*35.29*/.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")),format.raw/*35.83*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*36.23*/routes/*36.29*/.Assets.versioned("javascripts/main.js")),format.raw/*36.69*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*33.23*/routes/*33.29*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*33.74*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*34.23*/routes/*34.29*/.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")),format.raw/*34.83*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*35.23*/routes/*35.29*/.Assets.versioned("javascripts/main.js")),format.raw/*35.69*/("""" type="text/javascript"></script>
     </body>
 </html>"""))
       }
@@ -85,11 +84,11 @@ Seq[Any](format.raw/*1.43*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 18:13:03 CEST 2017
+                  DATE: Mon May 29 22:16:38 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/login.scala.html
-                  HASH: d4e0a6699f9abd1e243203fc8a0aa1776632e3bf
-                  MATRIX: 767->1|903->42|931->44|1010->149|1045->158|1145->232|1159->238|1236->294|1318->350|1332->356|1394->397|1482->458|1497->464|1558->503|1620->626|1656->635|1909->861|1924->867|1986->920|2026->922|2079->948|2094->954|2209->1047|2262->1073|2277->1079|2385->1165|2439->1191|2577->1298|2622->1315|2713->1379|2728->1385|2794->1430|2878->1487|2893->1493|2968->1547|3052->1604|3067->1610|3128->1650
-                  LINES: 27->1|32->1|34->3|37->6|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|44->14|45->15|54->24|54->24|54->24|54->24|55->25|55->25|55->25|56->26|56->26|56->26|58->28|59->29|60->30|64->34|64->34|64->34|65->35|65->35|65->35|66->36|66->36|66->36
+                  HASH: b95269b1bdf17bb77c4c9bf62c6e9cc02e267add
+                  MATRIX: 767->1|903->42|931->44|1010->149|1045->158|1145->232|1159->238|1236->294|1318->350|1332->356|1394->397|1482->458|1497->464|1558->503|1620->626|1656->635|1842->794|1857->800|1919->853|1959->855|2012->881|2027->887|2142->980|2195->1006|2210->1012|2318->1098|2372->1124|2510->1231|2555->1248|2646->1312|2661->1318|2727->1363|2811->1420|2826->1426|2901->1480|2985->1537|3000->1543|3061->1583
+                  LINES: 27->1|32->1|34->3|37->6|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|44->14|45->15|53->23|53->23|53->23|53->23|54->24|54->24|54->24|55->25|55->25|55->25|57->27|58->28|59->29|63->33|63->33|63->33|64->34|64->34|64->34|65->35|65->35|65->35
                   -- GENERATED --
               */
           

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Sun May 28 23:32:25 CEST 2017
+// @DATE:Mon May 29 22:10:19 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,17 +13,76 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:45
+  // @LINE:58
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:45
+    // @LINE:58
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:34
+  class ReverseCustomerController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:39
+    def delete(id:Long): Call = {
+    
+      (id: @unchecked) match {
+      
+        // @LINE:39
+        case (id)  =>
+          import ReverseRouteContext.empty
+          Call("DELETE", _prefix + { _defaultPrefix } + "customer/" + implicitly[PathBindable[Long]].unbind("id", id))
+      
+      }
+    
+    }
+  
+    // @LINE:36
+    def show(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "customer/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:37
+    def create(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "customer")
+    }
+  
+    // @LINE:38
+    def update(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "updatecustomer/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:41
+    def newCustomer(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "addcustomer")
+    }
+  
+    // @LINE:34
+    def list(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "customer")
+    }
+  
+    // @LINE:43
+    def editCustomer(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "editcustomer/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
   }
@@ -64,7 +123,7 @@ package controllers {
     // @LINE:15
     def update(id:Long): Call = {
       import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "user/" + implicitly[PathBindable[Long]].unbind("id", id))
+      Call("POST", _prefix + { _defaultPrefix } + "updateuser/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
     // @LINE:20
@@ -109,7 +168,7 @@ package controllers {
     }
 
   
-    // @LINE:42
+    // @LINE:55
     def authenticate(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "login")
@@ -170,32 +229,32 @@ package controllers {
   
   }
 
-  // @LINE:34
+  // @LINE:47
   class ReverseTaskController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:34
+    // @LINE:47
     def list(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "task")
     }
   
-    // @LINE:35
+    // @LINE:48
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "task")
     }
   
-    // @LINE:36
+    // @LINE:49
     def newTask(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "addtask")
     }
   
-    // @LINE:37
+    // @LINE:50
     def show(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "task/" + implicitly[PathBindable[Long]].unbind("id", id))

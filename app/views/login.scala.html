@@ -19,7 +19,6 @@
                 <div class="col-xs-12">
 
                     <h1>Login</h1><br>
-                    <p>Enter your e-Mail and Password to login</p>
 
                     @helper.form(action = routes.LoginController.authenticate()) {
                         @helper.inputText(loginForm("email"), 'id -> "email", '_label -> "E-Mail", 'class -> "form-control")
