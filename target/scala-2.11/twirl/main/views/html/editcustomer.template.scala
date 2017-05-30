@@ -47,7 +47,7 @@ Seq[Any](format.raw/*1.95*/("""
             """),_display_(/*16.14*/helper/*16.20*/.select(
                 field = customerForm("projektListholder"),
                 options = (projektList.map(projekt => projekt.getId().toString() -> projekt.getProjektName())),
-                '_label -> "Gruppe",
+                '_label -> "Auftraggeber von Projekt",
                 'class -> "form-control",
                 'multiple -> "Multiple"
             )),format.raw/*22.14*/("""
@@ -78,10 +78,10 @@ Seq[Any](format.raw/*1.95*/("""
 object editcustomer extends editcustomer_Scope0.editcustomer
               /*
                   -- GENERATED --
-                  DATE: Mon May 29 21:09:20 CEST 2017
+                  DATE: Tue May 30 21:01:12 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/editcustomer.scala.html
-                  HASH: 4712a78312cd6644a65434d938f6a016c5b1b9c0
-                  MATRIX: 803->1|991->94|1019->97|1051->121|1089->122|1120->127|1325->305|1340->311|1409->371|1448->372|1489->386|1504->392|1631->497|1672->511|1687->517|1794->602|1835->616|1850->622|1960->710|2001->724|2016->730|2349->1042|2391->1056|2747->1381|2783->1390
+                  HASH: 5a7dfc76c47fe429094c2028253e5b690daf66ac
+                  MATRIX: 803->1|991->94|1019->97|1051->121|1089->122|1120->127|1325->305|1340->311|1409->371|1448->372|1489->386|1504->392|1631->497|1672->511|1687->517|1794->602|1835->616|1850->622|1960->710|2001->724|2016->730|2367->1060|2409->1074|2765->1399|2801->1408
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|43->12|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|53->22|55->24|58->27|59->28
                   -- GENERATED --
               */

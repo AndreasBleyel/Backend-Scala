@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Mon May 29 22:10:19 CEST 2017
+// @DATE:Tue May 30 20:59:15 CEST 2017
 
 
 package router {

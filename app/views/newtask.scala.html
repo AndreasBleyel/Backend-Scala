@@ -11,13 +11,14 @@
         <div class="col-xs-12">
         @helper.form(action = routes.TaskController.create()){
             @helper.inputText(taskForm("taskName"), 'id -> "taskName", '_label -> "Taskname", 'class -> "form-control")
+            @helper.inputText(taskForm("duration"), 'id -> "duration", '_label -> "Dauer der Aufgabe (in Minuten ohne Komma)", 'class -> "form-control")
 
             <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Anlegen </button>
 
     @helper.select(
         field = taskForm("tempUser"),
         options = (userList.map(user => user.getId().toString -> user.userVorNachname())),
-        '_label -> "User",
+        '_label -> "zugeteilt zu Mitarbeiter",
         'class -> "form-control"
     )
         }

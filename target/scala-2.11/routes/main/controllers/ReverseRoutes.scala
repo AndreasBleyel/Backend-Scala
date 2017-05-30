@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Mon May 29 22:10:19 CEST 2017
+// @DATE:Tue May 30 20:59:15 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -200,7 +200,7 @@ package controllers {
     // @LINE:28
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
-      Call("DELETE", _prefix + { _defaultPrefix } + "deleteprojekt" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+      Call("GET", _prefix + { _defaultPrefix } + "deleteprojekt/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
     // @LINE:26
@@ -219,6 +219,18 @@ package controllers {
     def newProjekt(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "addprojekt")
+    }
+  
+    // @LINE:31
+    def update(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "updateprojekt/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:30
+    def editProjekt(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "editprojekt/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
     // @LINE:24

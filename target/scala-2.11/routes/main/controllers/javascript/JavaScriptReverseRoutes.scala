@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Mon May 29 22:10:19 CEST 2017
+// @DATE:Tue May 30 20:59:15 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -270,7 +270,7 @@ package controllers.javascript {
       "controllers.ProjektController.delete",
       """
         function(id0) {
-          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteprojekt" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteprojekt/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
         }
       """
     )
@@ -301,6 +301,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addprojekt"})
+        }
+      """
+    )
+  
+    // @LINE:31
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProjektController.update",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "updateprojekt/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+    // @LINE:30
+    def editProjekt: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProjektController.editProjekt",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "editprojekt/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
         }
       """
     )

@@ -37,25 +37,23 @@ public class CustomerController extends Controller {
         Customer customer = customerForm.bindFromRequest().get();
 
         List<Projekt> tmpProjekts = new ArrayList<>();
-        for(String id : customer.getProjektListholder()){
-            Projekt grp = Projekt.find.byId(Long.parseLong(id));
-            tmpProjekts.add(grp);
-        }
-        customer.setProjektList(tmpProjekts);
 
-        for (Projekt tmpProjekt : tmpProjekts){
-            Projekt projekt = Projekt.find.byId(tmpProjekt.getId());
-            projekt.setCustomer(customer);
-            projekt.save();
-        }
+        if(customer.getProjektListholder() != null)
+            for(String id : customer.getProjektListholder()){
+                Projekt grp = Projekt.find.byId(Long.parseLong(id));
+                tmpProjekts.add(grp);
+            }
+
+        customer.setProjektList(tmpProjekts);
 
         customer.save();
 
-        for (Projekt tmpProjekt : tmpProjekts){
-            Projekt projekt = Projekt.find.byId(tmpProjekt.getId());
-            projekt.setCustomer(customer);
-            projekt.save();
-        }
+        if(tmpProjekts != null)
+            for (Projekt tmpProjekt : tmpProjekts){
+                Projekt projekt = Projekt.find.byId(tmpProjekt.getId());
+                projekt.setCustomer(customer);
+                projekt.save();
+            }
 
         return redirect(routes.CustomerController.list());
     }

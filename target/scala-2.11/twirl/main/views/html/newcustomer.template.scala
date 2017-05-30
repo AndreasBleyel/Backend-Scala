@@ -48,7 +48,7 @@ Seq[Any](format.raw/*1.77*/("""
             """),_display_(/*17.14*/helper/*17.20*/.select(
                 field = customerForm("projektListholder"),
                 options = (projektList.map(projekt => projekt.getId().toString() -> projekt.getProjektName())),
-                '_label -> "Gruppe",
+                '_label -> "Auftraggeber von Projekt",
                 'class -> "form-control",
                 'multiple -> "Multiple"
             )),format.raw/*23.14*/("""
@@ -77,10 +77,10 @@ Seq[Any](format.raw/*1.77*/("""
 object newcustomer extends newcustomer_Scope0.newcustomer
               /*
                   -- GENERATED --
-                  DATE: Mon May 29 21:09:20 CEST 2017
+                  DATE: Tue May 30 20:21:52 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/newcustomer.scala.html
-                  HASH: 9be899cdb2c8a89e9b35e6fe3756fd02d01f98be
-                  MATRIX: 796->1|966->76|994->79|1022->99|1060->100|1091->105|1301->288|1316->294|1375->344|1414->345|1455->359|1470->365|1597->470|1638->484|1653->490|1760->575|1801->589|1816->595|1926->683|1980->710|1995->716|2328->1028|2370->1042|2564->1205|2600->1214
+                  HASH: a981ef0afe11e9145c0a2c386a34f3c00425661f
+                  MATRIX: 796->1|966->76|994->79|1022->99|1060->100|1091->105|1301->288|1316->294|1375->344|1414->345|1455->359|1470->365|1597->470|1638->484|1653->490|1760->575|1801->589|1816->595|1926->683|1980->710|1995->716|2346->1046|2388->1060|2582->1223|2618->1232
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|43->12|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|48->17|48->17|54->23|56->25|57->26|58->27
                   -- GENERATED --
               */

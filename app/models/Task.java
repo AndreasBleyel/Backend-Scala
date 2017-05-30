@@ -16,6 +16,7 @@ public class Task extends Model {
     private Long id;
 
     private String taskName;
+    private int duration;
 
     @ManyToOne
     //@JoinColumn(name = "user_id")
@@ -29,13 +30,21 @@ public class Task extends Model {
     public Task() {
     }
 
-    public Task(String taskName) {
+    /*public Task(String taskName) {
         this.taskName = taskName;
     }
 
     public Task(Long id, String taskName) {
         this.id = id;
         this.taskName = taskName;
+    }*/
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public Long getId() {

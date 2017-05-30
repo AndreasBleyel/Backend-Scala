@@ -7,6 +7,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
 
 import static play.mvc.Results.ok;
@@ -41,12 +42,25 @@ public class ProjektController extends Controller {
     }
 
     public Result delete(Long id){
-        return ok();
+        Projekt.find.byId(id).delete();
+        return redirect(routes.ProjektController.list());
     }
 
-   /* public Result editProjekt(Long id){
+    public Result editProjekt(Long id){
         Form<Projekt> projektForm = formFactory.form(Projekt.class).fill(Projekt.find.byId(id));
-        List<Projekt> groupList = Projekt.find.all();
-        return ok(views.html.editprojekt.render(projektForm, groupList, id));
-    }*/
+        return ok(views.html.editprojekt.render(projektForm, id));
+    }
+
+    public Result update(Long id){
+
+        Form<Projekt> projektForm = formFactory.form(Projekt.class);
+        Projekt oldProjekt = Projekt.find.byId(id);
+
+        Projekt updatedProjekt = projektForm.bindFromRequest().get();
+
+        oldProjekt.setProjektName(updatedProjekt.getProjektName());
+        oldProjekt.save();
+
+        return redirect(routes.ProjektController.list());
+    }
 }

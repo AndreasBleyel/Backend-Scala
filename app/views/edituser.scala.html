@@ -23,7 +23,7 @@
             @helper.select(
                 field = userForm("groupsholder"),
                 options = (groups.map(group => group.getId().toString() -> group.getProjektName())),
-                '_label -> "Gruppe",
+                '_label -> "arbeitet an Projekt",
                 'class -> "form-control",
                 'multiple -> "Multiple"
             )

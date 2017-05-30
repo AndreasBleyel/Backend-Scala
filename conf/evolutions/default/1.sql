@@ -27,6 +27,7 @@ create table projekt (
 create table task (
   task_id                       bigint auto_increment not null,
   task_name                     varchar(255),
+  duration                      integer,
   user_user_id                  bigint,
   constraint pk_task primary key (task_id)
 );

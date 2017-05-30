@@ -16,7 +16,7 @@
             @helper.select(
                 field = customerForm("projektListholder"),
                 options = (projektList.map(projekt => projekt.getId().toString() -> projekt.getProjektName())),
-                '_label -> "Gruppe",
+                '_label -> "Auftraggeber von Projekt",
                 'class -> "form-control",
                 'multiple -> "Multiple"
             )

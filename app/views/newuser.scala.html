@@ -3,7 +3,7 @@
 @main("New User"){
     <div class="row">
         <div class="col-xs-12">
-            <h1>Neuer Benutzer</h1>
+            <h1>Neuer Mitarbeiter</h1>
         </div>
     </div>
 
@@ -23,7 +23,7 @@
             @helper.select(
                 field = userForm("groupsholder"),
                 options = (groups.map(group => group.getId().toString() -> group.getProjektName())),
-                '_label -> "Gruppe",
+                '_label -> "arbeitet an Projekt",
                 'class -> "form-control",
                 'multiple -> "Multiple"
             )

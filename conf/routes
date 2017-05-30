@@ -25,10 +25,10 @@ GET           /projekt                   controllers.ProjektController.list()
 POST          /projekt                   controllers.ProjektController.create()
 GET           /projekt/:id               controllers.ProjektController.show(id: Long)
 GET           /addprojekt                controllers.ProjektController.newProjekt()
-DELETE        /deleteprojekt             controllers.ProjektController.delete(id: Long)
+GET           /deleteprojekt/:id         controllers.ProjektController.delete(id: Long)
 
-#GET /editprojekt/:id    controllers.ProjektController.editProjekt(id: Long)
-
+GET           /editprojekt/:id           controllers.ProjektController.editProjekt(id: Long)
+POST          /updateprojekt/:id         controllers.ProjektController.update(id: Long)
 # Kunden
 
 GET           /customer                  controllers.CustomerController.list()

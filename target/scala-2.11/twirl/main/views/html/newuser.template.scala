@@ -34,7 +34,7 @@ Seq[Any](format.raw/*1.64*/("""
 """),_display_(/*3.2*/main("New User")/*3.18*/{_display_(Seq[Any](format.raw/*3.19*/("""
     """),format.raw/*4.5*/("""<div class="row">
         <div class="col-xs-12">
-            <h1>Neuer Benutzer</h1>
+            <h1>Neuer Mitarbeiter</h1>
         </div>
     </div>
 
@@ -54,7 +54,7 @@ Seq[Any](format.raw/*1.64*/("""
             """),_display_(/*23.14*/helper/*23.20*/.select(
                 field = userForm("groupsholder"),
                 options = (groups.map(group => group.getId().toString() -> group.getProjektName())),
-                '_label -> "Gruppe",
+                '_label -> "arbeitet an Projekt",
                 'class -> "form-control",
                 'multiple -> "Multiple"
             )),format.raw/*29.14*/("""
@@ -83,10 +83,10 @@ Seq[Any](format.raw/*1.64*/("""
 object newuser extends newuser_Scope0.newuser
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 22:01:37 CEST 2017
+                  DATE: Tue May 30 20:18:58 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/newuser.scala.html
-                  HASH: c1d72a5d69ab35c334a44ecaa03a73ed56d5dc2c
-                  MATRIX: 784->1|941->63|971->68|995->84|1033->85|1065->91|1286->285|1301->291|1356->337|1395->338|1437->353|1452->359|1575->460|1617->475|1632->481|1735->562|1777->577|1792->583|2064->834|2106->849|2121->855|2227->939|2269->954|2284->960|2391->1045|2433->1060|2448->1066|2767->1364|2811->1380|3006->1544|3043->1554
+                  HASH: f83f2ce1fafa714e1f5280cfb6ae6390d4fa0bb6
+                  MATRIX: 784->1|941->63|971->68|995->84|1033->85|1065->91|1289->288|1304->294|1359->340|1398->341|1440->356|1455->362|1578->463|1620->478|1635->484|1738->565|1780->580|1795->586|2067->837|2109->852|2124->858|2230->942|2272->957|2287->963|2394->1048|2436->1063|2451->1069|2783->1380|2827->1396|3022->1560|3059->1570
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|43->12|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|54->23|60->29|62->31|63->32|64->33
                   -- GENERATED --
               */

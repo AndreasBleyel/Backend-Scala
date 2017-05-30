@@ -53,7 +53,7 @@ Seq[Any](format.raw/*1.31*/("""
                     <td>"""),_display_(/*22.26*/user/*22.30*/.getEmail),format.raw/*22.39*/("""</td>
 
                     <td><a href="/user/"""),_display_(/*24.41*/user/*24.45*/.getId()),format.raw/*24.53*/("""" class="details-button"><span class="glyphicon glyphicon-plus"></span></a></td>
-                    <td><a href="/deleteuser/"""),_display_(/*25.47*/user/*25.51*/.getId()),format.raw/*25.59*/("""" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                    <td><a href="/deleteuser/"""),_display_(/*25.47*/user/*25.51*/.getId()),format.raw/*25.59*/("""" class="btn btn-danger" onclick="return confirm('Mitarbeiter samt zugehöriger Tasks wird gelöscht!');"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
                 </tr>
             """)))}),format.raw/*27.14*/("""
             """),format.raw/*28.13*/("""</tbody>
@@ -80,10 +80,10 @@ Seq[Any](format.raw/*1.31*/("""
 object userlist extends userlist_Scope0.userlist
               /*
                   -- GENERATED --
-                  DATE: Mon May 29 19:37:48 CEST 2017
+                  DATE: Tue May 30 20:06:32 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/userlist.scala.html
-                  HASH: 2a23fbb82395d8697862b497950dac41978c178f
-                  MATRIX: 762->1|886->30|920->39|952->63|991->65|1027->75|1442->463|1479->484|1519->486|1565->504|1623->535|1636->539|1670->552|1729->584|1742->588|1775->600|1834->632|1847->636|1877->645|1953->694|1966->698|1995->706|2150->834|2163->838|2192->846|2362->985|2404->999|2467->1032
+                  HASH: 8451656bd3a7c72f3e8d5a999b0d9ec8286a9231
+                  MATRIX: 762->1|886->30|920->39|952->63|991->65|1027->75|1442->463|1479->484|1519->486|1565->504|1623->535|1636->539|1670->552|1729->584|1742->588|1775->600|1834->632|1847->636|1877->645|1953->694|1966->698|1995->706|2150->834|2163->838|2192->846|2441->1064|2483->1078|2546->1111
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|49->18|49->18|49->18|50->19|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|55->24|55->24|55->24|56->25|56->25|56->25|58->27|59->28|61->30
                   -- GENERATED --
               */
