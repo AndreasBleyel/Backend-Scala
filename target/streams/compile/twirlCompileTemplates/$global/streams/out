@@ -1,0 +1,4 @@
+[error] /home/andi/Desktop/relationManyToMany-2/app/views/projekt.scala.html:69: Expected '}' but found 'EOF'
+[error] }
+[error]  ^
+[error] (compile:twirlCompileTemplates) Twirl compilation failed

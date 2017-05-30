@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Tue May 30 20:59:15 CEST 2017
+// @DATE:Tue May 30 21:14:39 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:58
+  // @LINE:61
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:58
+    // @LINE:61
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -168,7 +168,7 @@ package controllers {
     }
 
   
-    // @LINE:55
+    // @LINE:58
     def authenticate(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "login")
@@ -248,10 +248,16 @@ package controllers {
     }
 
   
-    // @LINE:47
-    def list(): Call = {
+    // @LINE:51
+    def delete(id:Long): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "task")
+      Call("GET", _prefix + { _defaultPrefix } + "deletetask/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:50
+    def show(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "task/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
     // @LINE:48
@@ -260,16 +266,28 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "task")
     }
   
+    // @LINE:54
+    def update(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "updatetask/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:47
+    def list(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "task")
+    }
+  
+    // @LINE:53
+    def editTask(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "edittask/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
     // @LINE:49
     def newTask(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "addtask")
-    }
-  
-    // @LINE:50
-    def show(id:Long): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "task/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
   }

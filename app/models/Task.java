@@ -25,6 +25,12 @@ public class Task extends Model {
     @Transient
     private String tempUser;
 
+    @ManyToOne
+    private Projekt projekt;
+
+    @Transient
+    private String tempProjekt;
+
     public static Model.Finder<Long, Task> find = new Model.Finder<Long, Task>(Task.class);
 
     public Task() {
@@ -38,6 +44,22 @@ public class Task extends Model {
         this.id = id;
         this.taskName = taskName;
     }*/
+
+    public String getTempProjekt() {
+        return tempProjekt;
+    }
+
+    public void setTempProjekt(String tempProjekt) {
+        this.tempProjekt = tempProjekt;
+    }
+
+    public Projekt getProjekt() {
+        return projekt;
+    }
+
+    public void setProjekt(Projekt projekt) {
+        this.projekt = projekt;
+    }
 
     public int getDuration() {
         return duration;

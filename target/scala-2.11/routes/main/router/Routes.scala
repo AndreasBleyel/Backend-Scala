@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Tue May 30 20:59:15 CEST 2017
+// @DATE:Tue May 30 21:14:39 CEST 2017
 
 package router
 
@@ -28,7 +28,7 @@ class Routes(
   CustomerController_6: controllers.CustomerController,
   // @LINE:47
   TaskController_4: controllers.TaskController,
-  // @LINE:58
+  // @LINE:61
   Assets_3: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -47,7 +47,7 @@ class Routes(
     CustomerController_6: controllers.CustomerController,
     // @LINE:47
     TaskController_4: controllers.TaskController,
-    // @LINE:58
+    // @LINE:61
     Assets_3: controllers.Assets
   ) = this(errorHandler, LoginController_5, HomeController_0, UserController_1, ProjektController_2, CustomerController_6, TaskController_4, Assets_3, "/")
 
@@ -92,6 +92,9 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """task""", """controllers.TaskController.create()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtask""", """controllers.TaskController.newTask()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """task/""" + "$" + """id<[^/]+>""", """controllers.TaskController.show(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deletetask/""" + "$" + """id<[^/]+>""", """controllers.TaskController.delete(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """edittask/""" + "$" + """id<[^/]+>""", """controllers.TaskController.editTask(id:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatetask/""" + "$" + """id<[^/]+>""", """controllers.TaskController.update(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.LoginController.login()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.LoginController.authenticate()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -595,11 +598,62 @@ class Routes(
     )
   )
 
+  // @LINE:51
+  private[this] lazy val controllers_TaskController_delete29_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletetask/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_TaskController_delete29_invoker = createInvoker(
+    TaskController_4.delete(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.TaskController",
+      "delete",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """deletetask/""" + "$" + """id<[^/]+>"""
+    )
+  )
+
+  // @LINE:53
+  private[this] lazy val controllers_TaskController_editTask30_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("edittask/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_TaskController_editTask30_invoker = createInvoker(
+    TaskController_4.editTask(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.TaskController",
+      "editTask",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """edittask/""" + "$" + """id<[^/]+>"""
+    )
+  )
+
   // @LINE:54
-  private[this] lazy val controllers_LoginController_login29_route = Route("GET",
+  private[this] lazy val controllers_TaskController_update31_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatetask/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_TaskController_update31_invoker = createInvoker(
+    TaskController_4.update(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.TaskController",
+      "update",
+      Seq(classOf[Long]),
+      "POST",
+      """""",
+      this.prefix + """updatetask/""" + "$" + """id<[^/]+>"""
+    )
+  )
+
+  // @LINE:57
+  private[this] lazy val controllers_LoginController_login32_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
-  private[this] lazy val controllers_LoginController_login29_invoker = createInvoker(
+  private[this] lazy val controllers_LoginController_login32_invoker = createInvoker(
     LoginController_5.login(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -612,11 +666,11 @@ class Routes(
     )
   )
 
-  // @LINE:55
-  private[this] lazy val controllers_LoginController_authenticate30_route = Route("POST",
+  // @LINE:58
+  private[this] lazy val controllers_LoginController_authenticate33_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
-  private[this] lazy val controllers_LoginController_authenticate30_invoker = createInvoker(
+  private[this] lazy val controllers_LoginController_authenticate33_invoker = createInvoker(
     LoginController_5.authenticate(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -629,11 +683,11 @@ class Routes(
     )
   )
 
-  // @LINE:58
-  private[this] lazy val controllers_Assets_versioned31_route = Route("GET",
+  // @LINE:61
+  private[this] lazy val controllers_Assets_versioned34_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned31_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned34_invoker = createInvoker(
     Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -823,22 +877,40 @@ class Routes(
         controllers_TaskController_show28_invoker.call(TaskController_4.show(id))
       }
   
-    // @LINE:54
-    case controllers_LoginController_login29_route(params) =>
-      call { 
-        controllers_LoginController_login29_invoker.call(LoginController_5.login())
+    // @LINE:51
+    case controllers_TaskController_delete29_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_TaskController_delete29_invoker.call(TaskController_4.delete(id))
       }
   
-    // @LINE:55
-    case controllers_LoginController_authenticate30_route(params) =>
+    // @LINE:53
+    case controllers_TaskController_editTask30_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_TaskController_editTask30_invoker.call(TaskController_4.editTask(id))
+      }
+  
+    // @LINE:54
+    case controllers_TaskController_update31_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_TaskController_update31_invoker.call(TaskController_4.update(id))
+      }
+  
+    // @LINE:57
+    case controllers_LoginController_login32_route(params) =>
       call { 
-        controllers_LoginController_authenticate30_invoker.call(LoginController_5.authenticate())
+        controllers_LoginController_login32_invoker.call(LoginController_5.login())
       }
   
     // @LINE:58
-    case controllers_Assets_versioned31_route(params) =>
+    case controllers_LoginController_authenticate33_route(params) =>
+      call { 
+        controllers_LoginController_authenticate33_invoker.call(LoginController_5.authenticate())
+      }
+  
+    // @LINE:61
+    case controllers_Assets_versioned34_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned31_invoker.call(Assets_3.versioned(path, file))
+        controllers_Assets_versioned34_invoker.call(Assets_3.versioned(path, file))
       }
   }
 }

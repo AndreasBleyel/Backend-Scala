@@ -29,6 +29,7 @@ create table task (
   task_name                     varchar(255),
   duration                      integer,
   user_user_id                  bigint,
+  projekt_group_id              bigint,
   constraint pk_task primary key (task_id)
 );
 
@@ -54,6 +55,9 @@ create index ix_projekt_customer_customer_id on projekt (customer_customer_id);
 alter table task add constraint fk_task_user_user_id foreign key (user_user_id) references user (user_id) on delete restrict on update restrict;
 create index ix_task_user_user_id on task (user_user_id);
 
+alter table task add constraint fk_task_projekt_group_id foreign key (projekt_group_id) references projekt (group_id) on delete restrict on update restrict;
+create index ix_task_projekt_group_id on task (projekt_group_id);
+
 alter table user_projekt add constraint fk_user_projekt_user foreign key (user_user_id) references user (user_id) on delete restrict on update restrict;
 create index ix_user_projekt_user on user_projekt (user_user_id);
 
@@ -68,6 +72,9 @@ drop index ix_projekt_customer_customer_id on projekt;
 
 alter table task drop foreign key fk_task_user_user_id;
 drop index ix_task_user_user_id on task;
+
+alter table task drop foreign key fk_task_projekt_group_id;
+drop index ix_task_projekt_group_id on task;
 
 alter table user_projekt drop foreign key fk_user_projekt_user;
 drop index ix_user_projekt_user on user_projekt;

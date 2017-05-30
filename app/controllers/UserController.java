@@ -28,6 +28,8 @@ public class UserController extends Controller {
     public Result show(Long id) {
         User user = User.find.byId(id);
 
+
+
         //unidirektional
         List<Task> taskList = Task.find.where().like("user_user_id", user.getId().toString()).findList();
 

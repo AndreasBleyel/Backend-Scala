@@ -2,7 +2,7 @@
 
 @main("Task") {
 
-    <h1>Task @task.getTaskName Details</h1>
+    <h1>Detailansicht Task: @task.getTaskName</h1>
 
     <table class="table table-striped">
         <thead>
@@ -21,8 +21,8 @@
                 <td>@task.getId</td>
                 <td>@task.getTaskName</td>
                 <td><a href="/user/@task.getUser.getId">@task.getUser</a></td>
-                <td>Projekt</td>
-                <td><a href="/task/@task.getId()" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a href="/projekt/@task.getProjekt.getId">@task.getProjekt</a></td>
+                <td><a href="/edittask/@task.getId()" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td><a href="/deletetask/@task.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
                 </td>
             </tr>

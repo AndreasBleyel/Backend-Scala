@@ -20,7 +20,7 @@ public class Customer extends Model {
     private String email;
 
     @Transient
-    List<String> projektListholder;
+    private List<String> projektListholder;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Projekt> projektList;

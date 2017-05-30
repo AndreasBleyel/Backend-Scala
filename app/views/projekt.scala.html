@@ -2,44 +2,77 @@
 
 @main("Projekt") {
 
-    <h1>Projekt @projekt.getProjektName</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Kunde</th>
-                <th>Mitarbeiter</th>
-                <th>Bearbeiten</th>
-                <th>Löschen</th>
-            </tr>
-        </thead>
-        <tbody>
+    <h1>Detailansicht Projekt: @projekt.getProjektName</h1>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Kunde</th>
+                    <th>Mitarbeiter</th>
+                    <th>Bearbeiten</th>
+                    <th>Löschen</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <tr>
-                <td>@projekt.getId</td>
-                <td>@projekt.getProjektName</td>
+                <tr>
+                    <td>@projekt.getId</td>
+                    <td>@projekt.getProjektName</td>
 
-                <td>
-                @if(projekt.getCustomer == null) {
-                    Kein Kunde zugeteilt
+                    <td>
+                    @if(projekt.getCustomer == null) {
+                        Kein Kunde zugeteilt
+                    } else {
+                        <a href="/customer/@projekt.getCustomer.getId">@projekt.getCustomer</a></td>
+                    }<td>
+                @if(projekt.getUserList().isEmpty) {
+                    Kein Mitarbeiter zugeteilt
                 } else {
-                    @projekt.getCustomer</td>
-                }<td>
-            @if(projekt.getUserList().isEmpty) {
-                Kein Mitarbeiter zugeteilt
-            } else {
-                @for(mitarbeiter <- projekt.getUserList()) {
-                    <li>@mitarbeiter</li>
+                    @for(mitarbeiter <- projekt.getUserList()) {
+                        <li><a href="/user/@mitarbeiter.getId">@mitarbeiter.getLastname</a></li>
+                    }
                 }
-            }
-            </td>
-                <td><a href="/editprojekt/@projekt.getId()" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                <td><a href="/deleteprojekt/@projekt.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
                 </td>
-            </tr>
+                    <td><a href="/editprojekt/@projekt.getId()" class="details-button"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a href="/deleteprojekt/@projekt.getId()" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+                    </td>
+                </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
+    @if(projekt.getTaskList.isEmpty) {
+        <h2>Dem Projekt sind keine Tasks zugeordnet</h2>
+    } else {
+        <h2>zugehörige Tasks</h2>
+
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Taskname</th>
+                        <th>Task Dauer (Minuten)</th>
+                        <th>Bearbeiter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(task <- projekt.getTaskList) {
+                        <tr>
+                            <td><a href="/task/@task.getId">@task.getTaskName</a></td>
+                            <td>@task.getDuration</td>
+                            <td><a href="/user/@task.getUser.getId">@task.getUser</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+            <p>Summe aller Tasks: @projekt.getTaskList.size()</p>
+            <p>Dauer aller Tasks: @projekt.getDurationOfAllRelatedTasks Stunden</p>
+        </div>
+
+    }
 }

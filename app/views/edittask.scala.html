@@ -1,0 +1,35 @@
+@(taskForm: Form[Task], userList: List[User], projektList: List[Projekt], id: Long)
+
+@main("Task bearbeiten"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Task bearbeiten</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+        @helper.form(action = routes.TaskController.update(id)){
+            @helper.inputText(taskForm("taskName"), 'id -> "taskName", '_label -> "Taskname", 'class -> "form-control")
+            @helper.inputText(taskForm("duration"), 'id -> "duration", '_label -> "Dauer der Aufgabe (in Minuten ohne Komma)", 'class -> "form-control")
+
+            @helper.select(
+                field = taskForm("tempUser"),
+                options = (userList.map(user => user.getId().toString -> user.userVorNachname())),
+                '_label -> "zugeteilt zu Mitarbeiter",
+                'class -> "form-control"
+            )
+
+            @helper.select(
+                field = taskForm("tempProjekt"),
+                options = (projektList.map(projekt => projekt.getId().toString -> projekt.getProjektName())),
+                '_label -> "zugeteilt zu Projekt",
+                'class -> "form-control"
+            )
+
+            <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Anlegen </button>
+            <button type="reset" class="btn btn-danger" value="Reset" ><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Zurücksetzen </button>
+        }
+        </div>
+    </div>
+}

@@ -48,7 +48,10 @@ GET           /task                      controllers.TaskController.list()
 POST          /task                      controllers.TaskController.create()
 GET           /addtask                   controllers.TaskController.newTask()
 GET           /task/:id                  controllers.TaskController.show(id: Long)
+GET           /deletetask/:id            controllers.TaskController.delete(id: Long)
 
+GET           /edittask/:id              controllers.TaskController.editTask(id: Long)
+POST          /updatetask/:id            controllers.TaskController.update(id: Long)
 # Login
 
 GET           /login                     controllers.LoginController.login()

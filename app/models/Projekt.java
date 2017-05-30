@@ -21,12 +21,15 @@ public class Projekt extends Model {
     @ManyToOne
     private Customer customer;
 
+    @OneToMany(mappedBy = "projekt", cascade = CascadeType.ALL)
+    private List<Task> taskList;
+
     public Projekt() {
     }
 
-    public Projekt(String name) {
+    /*public Projekt(String name) {
         this.projektName = name;
-    }
+    }*/
 
     public static Finder<Long, Projekt> find = new Finder<Long, Projekt>(Projekt.class);
 
@@ -34,6 +37,14 @@ public class Projekt extends Model {
     @Override
     public String toString() {
         return this.getProjektName();
+    }
+
+    public List<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List<Task> taskList) {
+        this.taskList = taskList;
     }
 
     public Long getId() {
@@ -66,5 +77,13 @@ public class Projekt extends Model {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public String getDurationOfAllRelatedTasks(){
+        int duration = 0;
+        for (Task task : this.getTaskList())
+            duration += task.getDuration();
+
+        return String.format("%d:%02d", duration/60, duration%60);
     }
 }

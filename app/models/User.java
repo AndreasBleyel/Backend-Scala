@@ -4,13 +4,14 @@ import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 public class User extends Model {
     @Id
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private Long id;
 
     private String firstname;
@@ -37,18 +38,18 @@ public class User extends Model {
         this.taskList = taskList;
     }
 
-    public User(){
+    public User() {
 
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("%s %s (%s)", this.getFirstname(), this.getLastname(), this.getEmail());
     }
 
     public static Finder<Long, User> find = new Finder<Long, User>(User.class);
 
-    public String userVorNachname (){
+    public String userVorNachname() {
         return String.format("%s %s", this.getFirstname(), this.getLastname());
     }
 
@@ -114,5 +115,35 @@ public class User extends Model {
 
     public void setGroupsholder(List<String> groupsholder) {
         this.groupsholder = groupsholder;
+    }
+
+    public String getDurationOfAllRelatedTasks() {
+        int duration = 0;
+        for (Task task : this.getTaskList())
+            duration += task.getDuration();
+
+        return String.format("%d:%02d", duration/60, duration%60);
+    }
+
+    public String getDurationOfTasksRelatedToOneProjekt(Projekt projekt){
+        int duration = 0;
+
+        for(Task task : projekt.getTaskList()){
+            if(task.getUser() == this){
+                duration += task.getDuration();
+            }
+        }
+        return String.format("%d:%02d", duration/60, duration%60);
+    }
+
+    public int getAmountOfTasksRelatedToOneProjekt(Projekt projekt){
+        int amount = 0;
+
+        for(Task task : projekt.getTaskList()){
+            if(task.getUser() == this){
+                amount++;
+            }
+        }
+        return amount;
     }
 }
