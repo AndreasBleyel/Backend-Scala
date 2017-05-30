@@ -1,4 +1,4 @@
-@(user: models.User, taskList: List[Task])
+@(user: models.User)
 
 @main("Mitarbeiter") {
     <h1>Detailansicht Mitarbeiter: @user.getLastname</h1>
@@ -53,7 +53,7 @@
                     <tr>
                         <td><a href="/task/@task.getId">@task.getTaskName</a></td>
                         <td>@task.getDuration</td>
-                        <td><a href="projekt/@task.getProjekt.getId">@task.getProjekt.getProjektName</a></td>
+                        <td><a href="/projekt/@task.getProjekt.getId">@task.getProjekt.getProjektName</a></td>
                     </tr>
                 }
 

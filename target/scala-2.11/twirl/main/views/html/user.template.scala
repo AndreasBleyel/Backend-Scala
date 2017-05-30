@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class user extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[models.User,List[Task],play.twirl.api.HtmlFormat.Appendable] {
+class user extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[models.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(user: models.User, taskList: List[Task]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.43*/("""
+Seq[Any](format.raw/*1.21*/("""
 
 """),_display_(/*3.2*/main("Mitarbeiter")/*3.21*/ {_display_(Seq[Any](format.raw/*3.23*/("""
     """),format.raw/*4.5*/("""<h1>Detailansicht Mitarbeiter: """),_display_(/*4.37*/user/*4.41*/.getLastname),format.raw/*4.53*/("""</h1>
@@ -84,7 +84,7 @@ Seq[Any](format.raw/*1.43*/("""
                     """),format.raw/*53.21*/("""<tr>
                         <td><a href="/task/"""),_display_(/*54.45*/task/*54.49*/.getId),format.raw/*54.55*/("""">"""),_display_(/*54.58*/task/*54.62*/.getTaskName),format.raw/*54.74*/("""</a></td>
                         <td>"""),_display_(/*55.30*/task/*55.34*/.getDuration),format.raw/*55.46*/("""</td>
-                        <td><a href="projekt/"""),_display_(/*56.47*/task/*56.51*/.getProjekt.getId),format.raw/*56.68*/("""">"""),_display_(/*56.71*/task/*56.75*/.getProjekt.getProjektName),format.raw/*56.101*/("""</a></td>
+                        <td><a href="/projekt/"""),_display_(/*56.48*/task/*56.52*/.getProjekt.getId),format.raw/*56.69*/("""">"""),_display_(/*56.72*/task/*56.76*/.getProjekt.getProjektName),format.raw/*56.102*/("""</a></td>
                     </tr>
                 """)))}),format.raw/*58.18*/("""
 
@@ -138,9 +138,9 @@ Seq[Any](format.raw/*1.43*/("""
     }
   }
 
-  def render(user:models.User,taskList:List[Task]): play.twirl.api.HtmlFormat.Appendable = apply(user,taskList)
+  def render(user:models.User): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:((models.User,List[Task]) => play.twirl.api.HtmlFormat.Appendable) = (user,taskList) => apply(user,taskList)
+  def f:((models.User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -153,10 +153,10 @@ Seq[Any](format.raw/*1.43*/("""
 object user extends user_Scope0.user
               /*
                   -- GENERATED --
-                  DATE: Tue May 30 22:33:01 CEST 2017
+                  DATE: Tue May 30 22:50:16 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/user.scala.html
-                  HASH: af83473c2771eb15bc1853c237d736b0977c0a70
-                  MATRIX: 759->1|895->42|925->47|952->66|991->68|1023->74|1081->106|1093->110|1125->122|1575->545|1588->549|1622->562|1677->590|1690->594|1723->606|1778->634|1791->638|1821->647|1876->675|1889->679|1920->689|1993->735|2045->771|2085->773|2135->795|2185->818|2202->826|2229->832|2259->835|2276->843|2314->860|2373->888|2419->906|2495->955|2508->959|2535->965|2709->1112|2722->1116|2751->1124|3020->1367|3057->1395|3097->1397|3134->1407|3225->1481|3238->1486|3277->1487|3314->1497|3771->1927|3816->1956|3856->1958|3906->1980|3983->2030|3996->2034|4023->2040|4053->2043|4066->2047|4099->2059|4166->2099|4179->2103|4212->2115|4292->2168|4305->2172|4343->2189|4373->2192|4386->2196|4434->2222|4520->2277|4568->2297|4979->2681|5028->2714|5068->2716|5118->2738|5197->2790|5213->2797|5240->2803|5270->2806|5286->2813|5322->2828|5389->2868|5402->2872|5468->2917|5531->2953|5544->2957|5612->3004|5696->3057|5744->3077|6210->3516|6223->3520|6264->3540|6327->3576|6340->3580|6380->3599|6443->3635|6456->3639|6506->3668|6644->3775
+                  HASH: d81cfd38a4b8d99ced11793b5c4178f47303afd5
+                  MATRIX: 748->1|862->20|892->25|919->44|958->46|990->52|1048->84|1060->88|1092->100|1542->523|1555->527|1589->540|1644->568|1657->572|1690->584|1745->612|1758->616|1788->625|1843->653|1856->657|1887->667|1960->713|2012->749|2052->751|2102->773|2152->796|2169->804|2196->810|2226->813|2243->821|2281->838|2340->866|2386->884|2462->933|2475->937|2502->943|2676->1090|2689->1094|2718->1102|2987->1345|3024->1373|3064->1375|3101->1385|3192->1459|3205->1464|3244->1465|3281->1475|3738->1905|3783->1934|3823->1936|3873->1958|3950->2008|3963->2012|3990->2018|4020->2021|4033->2025|4066->2037|4133->2077|4146->2081|4179->2093|4260->2147|4273->2151|4311->2168|4341->2171|4354->2175|4402->2201|4488->2256|4536->2276|4947->2660|4996->2693|5036->2695|5086->2717|5165->2769|5181->2776|5208->2782|5238->2785|5254->2792|5290->2807|5357->2847|5370->2851|5436->2896|5499->2932|5512->2936|5580->2983|5664->3036|5712->3056|6178->3495|6191->3499|6232->3519|6295->3555|6308->3559|6348->3578|6411->3614|6424->3618|6474->3647|6612->3754
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|35->4|35->4|35->4|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|54->23|54->23|56->25|56->25|56->25|57->26|57->26|57->26|57->26|57->26|57->26|57->26|58->27|59->28|61->30|61->30|61->30|62->31|62->31|62->31|68->37|68->37|68->37|69->38|70->39|70->39|70->39|71->40|83->52|83->52|83->52|84->53|85->54|85->54|85->54|85->54|85->54|85->54|86->55|86->55|86->55|87->56|87->56|87->56|87->56|87->56|87->56|89->58|91->60|104->73|104->73|104->73|105->74|106->75|106->75|106->75|106->75|106->75|106->75|107->76|107->76|107->76|108->77|108->77|108->77|111->80|113->82|126->95|126->95|126->95|127->96|127->96|127->96|128->97|128->97|128->97|135->104
                   -- GENERATED --
               */

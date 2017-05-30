@@ -64,14 +64,29 @@
                             <td><a href="/task/@task.getId">@task.getTaskName</a></td>
                             <td>@task.getDuration</td>
                             <td><a href="/user/@task.getUser.getId">@task.getUser</a></td>
+
                         </tr>
                     }
 
                 </tbody>
             </table>
 
-            <p>Summe aller Tasks: @projekt.getTaskList.size()</p>
-            <p>Dauer aller Tasks: @projekt.getDurationOfAllRelatedTasks Stunden</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Anzahl aller Tasks</th>
+                        <th>Dauer aller Tasks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@projekt.getTaskList.size()</td>
+                        <td>@projekt.getDurationOfAllRelatedTasks</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
         </div>
 
     }

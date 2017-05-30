@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Tue May 30 21:14:39 CEST 2017
+// @DATE:Tue May 30 23:10:32 CEST 2017
 
 package router
 
@@ -17,45 +17,49 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  LoginController_5: controllers.LoginController,
+  LoginController_6: controllers.LoginController,
   // @LINE:8
-  HomeController_0: controllers.HomeController,
+  HomeController_1: controllers.HomeController,
   // @LINE:12
-  UserController_1: controllers.UserController,
+  UserController_2: controllers.UserController,
   // @LINE:24
-  ProjektController_2: controllers.ProjektController,
+  ProjektController_3: controllers.ProjektController,
   // @LINE:34
-  CustomerController_6: controllers.CustomerController,
+  CustomerController_7: controllers.CustomerController,
   // @LINE:47
-  TaskController_4: controllers.TaskController,
-  // @LINE:61
-  Assets_3: controllers.Assets,
+  TaskController_5: controllers.TaskController,
+  // @LINE:63
+  SearchController_0: controllers.SearchController,
+  // @LINE:67
+  Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    LoginController_5: controllers.LoginController,
+    LoginController_6: controllers.LoginController,
     // @LINE:8
-    HomeController_0: controllers.HomeController,
+    HomeController_1: controllers.HomeController,
     // @LINE:12
-    UserController_1: controllers.UserController,
+    UserController_2: controllers.UserController,
     // @LINE:24
-    ProjektController_2: controllers.ProjektController,
+    ProjektController_3: controllers.ProjektController,
     // @LINE:34
-    CustomerController_6: controllers.CustomerController,
+    CustomerController_7: controllers.CustomerController,
     // @LINE:47
-    TaskController_4: controllers.TaskController,
-    // @LINE:61
-    Assets_3: controllers.Assets
-  ) = this(errorHandler, LoginController_5, HomeController_0, UserController_1, ProjektController_2, CustomerController_6, TaskController_4, Assets_3, "/")
+    TaskController_5: controllers.TaskController,
+    // @LINE:63
+    SearchController_0: controllers.SearchController,
+    // @LINE:67
+    Assets_4: controllers.Assets
+  ) = this(errorHandler, LoginController_6, HomeController_1, UserController_2, ProjektController_3, CustomerController_7, TaskController_5, SearchController_0, Assets_4, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, LoginController_5, HomeController_0, UserController_1, ProjektController_2, CustomerController_6, TaskController_4, Assets_3, prefix)
+    new Routes(errorHandler, LoginController_6, HomeController_1, UserController_2, ProjektController_3, CustomerController_7, TaskController_5, SearchController_0, Assets_4, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -97,6 +101,8 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatetask/""" + "$" + """id<[^/]+>""", """controllers.TaskController.update(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.LoginController.login()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.LoginController.authenticate()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.SearchController.showSearch()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.SearchController.search()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -110,7 +116,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_LoginController_login0_invoker = createInvoker(
-    LoginController_5.login(),
+    LoginController_6.login(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LoginController",
@@ -127,7 +133,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("main")))
   )
   private[this] lazy val controllers_HomeController_index1_invoker = createInvoker(
-    HomeController_0.index(),
+    HomeController_1.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -144,7 +150,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user")))
   )
   private[this] lazy val controllers_UserController_list2_invoker = createInvoker(
-    UserController_1.list(),
+    UserController_2.list(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -161,7 +167,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_UserController_show3_invoker = createInvoker(
-    UserController_1.show(fakeValue[Long]),
+    UserController_2.show(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -178,7 +184,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user")))
   )
   private[this] lazy val controllers_UserController_create4_invoker = createInvoker(
-    UserController_1.create(),
+    UserController_2.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -195,7 +201,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateuser/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_UserController_update5_invoker = createInvoker(
-    UserController_1.update(fakeValue[Long]),
+    UserController_2.update(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -212,7 +218,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_UserController_delete6_invoker = createInvoker(
-    UserController_1.delete(fakeValue[Long]),
+    UserController_2.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -229,7 +235,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adduser")))
   )
   private[this] lazy val controllers_UserController_newUser7_invoker = createInvoker(
-    UserController_1.newUser(),
+    UserController_2.newUser(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -246,7 +252,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteuser/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_UserController_delete8_invoker = createInvoker(
-    UserController_1.delete(fakeValue[Long]),
+    UserController_2.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -263,7 +269,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("edituser/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_UserController_editUser9_invoker = createInvoker(
-    UserController_1.editUser(fakeValue[Long]),
+    UserController_2.editUser(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -280,7 +286,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projekt")))
   )
   private[this] lazy val controllers_ProjektController_list10_invoker = createInvoker(
-    ProjektController_2.list(),
+    ProjektController_3.list(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -297,7 +303,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projekt")))
   )
   private[this] lazy val controllers_ProjektController_create11_invoker = createInvoker(
-    ProjektController_2.create(),
+    ProjektController_3.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -314,7 +320,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projekt/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ProjektController_show12_invoker = createInvoker(
-    ProjektController_2.show(fakeValue[Long]),
+    ProjektController_3.show(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -331,7 +337,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addprojekt")))
   )
   private[this] lazy val controllers_ProjektController_newProjekt13_invoker = createInvoker(
-    ProjektController_2.newProjekt(),
+    ProjektController_3.newProjekt(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -348,7 +354,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteprojekt/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ProjektController_delete14_invoker = createInvoker(
-    ProjektController_2.delete(fakeValue[Long]),
+    ProjektController_3.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -365,7 +371,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("editprojekt/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ProjektController_editProjekt15_invoker = createInvoker(
-    ProjektController_2.editProjekt(fakeValue[Long]),
+    ProjektController_3.editProjekt(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -382,7 +388,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateprojekt/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ProjektController_update16_invoker = createInvoker(
-    ProjektController_2.update(fakeValue[Long]),
+    ProjektController_3.update(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProjektController",
@@ -399,7 +405,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("customer")))
   )
   private[this] lazy val controllers_CustomerController_list17_invoker = createInvoker(
-    CustomerController_6.list(),
+    CustomerController_7.list(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -416,7 +422,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("customer/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_CustomerController_show18_invoker = createInvoker(
-    CustomerController_6.show(fakeValue[Long]),
+    CustomerController_7.show(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -433,7 +439,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("customer")))
   )
   private[this] lazy val controllers_CustomerController_create19_invoker = createInvoker(
-    CustomerController_6.create(),
+    CustomerController_7.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -450,7 +456,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecustomer/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_CustomerController_update20_invoker = createInvoker(
-    CustomerController_6.update(fakeValue[Long]),
+    CustomerController_7.update(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -467,7 +473,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("customer/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_CustomerController_delete21_invoker = createInvoker(
-    CustomerController_6.delete(fakeValue[Long]),
+    CustomerController_7.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -484,7 +490,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addcustomer")))
   )
   private[this] lazy val controllers_CustomerController_newCustomer22_invoker = createInvoker(
-    CustomerController_6.newCustomer(),
+    CustomerController_7.newCustomer(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -501,7 +507,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletecustomer/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_CustomerController_delete23_invoker = createInvoker(
-    CustomerController_6.delete(fakeValue[Long]),
+    CustomerController_7.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -518,7 +524,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("editcustomer/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_CustomerController_editCustomer24_invoker = createInvoker(
-    CustomerController_6.editCustomer(fakeValue[Long]),
+    CustomerController_7.editCustomer(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CustomerController",
@@ -535,7 +541,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("task")))
   )
   private[this] lazy val controllers_TaskController_list25_invoker = createInvoker(
-    TaskController_4.list(),
+    TaskController_5.list(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -552,7 +558,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("task")))
   )
   private[this] lazy val controllers_TaskController_create26_invoker = createInvoker(
-    TaskController_4.create(),
+    TaskController_5.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -569,7 +575,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtask")))
   )
   private[this] lazy val controllers_TaskController_newTask27_invoker = createInvoker(
-    TaskController_4.newTask(),
+    TaskController_5.newTask(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -586,7 +592,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("task/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_TaskController_show28_invoker = createInvoker(
-    TaskController_4.show(fakeValue[Long]),
+    TaskController_5.show(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -603,7 +609,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletetask/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_TaskController_delete29_invoker = createInvoker(
-    TaskController_4.delete(fakeValue[Long]),
+    TaskController_5.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -620,7 +626,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("edittask/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_TaskController_editTask30_invoker = createInvoker(
-    TaskController_4.editTask(fakeValue[Long]),
+    TaskController_5.editTask(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -637,7 +643,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatetask/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_TaskController_update31_invoker = createInvoker(
-    TaskController_4.update(fakeValue[Long]),
+    TaskController_5.update(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TaskController",
@@ -649,12 +655,12 @@ class Routes(
     )
   )
 
-  // @LINE:57
+  // @LINE:58
   private[this] lazy val controllers_LoginController_login32_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_LoginController_login32_invoker = createInvoker(
-    LoginController_5.login(),
+    LoginController_6.login(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LoginController",
@@ -666,12 +672,12 @@ class Routes(
     )
   )
 
-  // @LINE:58
+  // @LINE:59
   private[this] lazy val controllers_LoginController_authenticate33_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_LoginController_authenticate33_invoker = createInvoker(
-    LoginController_5.authenticate(),
+    LoginController_6.authenticate(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LoginController",
@@ -683,12 +689,46 @@ class Routes(
     )
   )
 
-  // @LINE:61
-  private[this] lazy val controllers_Assets_versioned34_route = Route("GET",
+  // @LINE:63
+  private[this] lazy val controllers_SearchController_showSearch34_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("search")))
+  )
+  private[this] lazy val controllers_SearchController_showSearch34_invoker = createInvoker(
+    SearchController_0.showSearch(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.SearchController",
+      "showSearch",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """search"""
+    )
+  )
+
+  // @LINE:64
+  private[this] lazy val controllers_SearchController_search35_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("search")))
+  )
+  private[this] lazy val controllers_SearchController_search35_invoker = createInvoker(
+    SearchController_0.search(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.SearchController",
+      "search",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """search"""
+    )
+  )
+
+  // @LINE:67
+  private[this] lazy val controllers_Assets_versioned36_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned34_invoker = createInvoker(
-    Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned36_invoker = createInvoker(
+    Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -706,211 +746,223 @@ class Routes(
     // @LINE:6
     case controllers_LoginController_login0_route(params) =>
       call { 
-        controllers_LoginController_login0_invoker.call(LoginController_5.login())
+        controllers_LoginController_login0_invoker.call(LoginController_6.login())
       }
   
     // @LINE:8
     case controllers_HomeController_index1_route(params) =>
       call { 
-        controllers_HomeController_index1_invoker.call(HomeController_0.index())
+        controllers_HomeController_index1_invoker.call(HomeController_1.index())
       }
   
     // @LINE:12
     case controllers_UserController_list2_route(params) =>
       call { 
-        controllers_UserController_list2_invoker.call(UserController_1.list())
+        controllers_UserController_list2_invoker.call(UserController_2.list())
       }
   
     // @LINE:13
     case controllers_UserController_show3_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_show3_invoker.call(UserController_1.show(id))
+        controllers_UserController_show3_invoker.call(UserController_2.show(id))
       }
   
     // @LINE:14
     case controllers_UserController_create4_route(params) =>
       call { 
-        controllers_UserController_create4_invoker.call(UserController_1.create())
+        controllers_UserController_create4_invoker.call(UserController_2.create())
       }
   
     // @LINE:15
     case controllers_UserController_update5_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_update5_invoker.call(UserController_1.update(id))
+        controllers_UserController_update5_invoker.call(UserController_2.update(id))
       }
   
     // @LINE:16
     case controllers_UserController_delete6_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_delete6_invoker.call(UserController_1.delete(id))
+        controllers_UserController_delete6_invoker.call(UserController_2.delete(id))
       }
   
     // @LINE:18
     case controllers_UserController_newUser7_route(params) =>
       call { 
-        controllers_UserController_newUser7_invoker.call(UserController_1.newUser())
+        controllers_UserController_newUser7_invoker.call(UserController_2.newUser())
       }
   
     // @LINE:19
     case controllers_UserController_delete8_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_delete8_invoker.call(UserController_1.delete(id))
+        controllers_UserController_delete8_invoker.call(UserController_2.delete(id))
       }
   
     // @LINE:20
     case controllers_UserController_editUser9_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_editUser9_invoker.call(UserController_1.editUser(id))
+        controllers_UserController_editUser9_invoker.call(UserController_2.editUser(id))
       }
   
     // @LINE:24
     case controllers_ProjektController_list10_route(params) =>
       call { 
-        controllers_ProjektController_list10_invoker.call(ProjektController_2.list())
+        controllers_ProjektController_list10_invoker.call(ProjektController_3.list())
       }
   
     // @LINE:25
     case controllers_ProjektController_create11_route(params) =>
       call { 
-        controllers_ProjektController_create11_invoker.call(ProjektController_2.create())
+        controllers_ProjektController_create11_invoker.call(ProjektController_3.create())
       }
   
     // @LINE:26
     case controllers_ProjektController_show12_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_ProjektController_show12_invoker.call(ProjektController_2.show(id))
+        controllers_ProjektController_show12_invoker.call(ProjektController_3.show(id))
       }
   
     // @LINE:27
     case controllers_ProjektController_newProjekt13_route(params) =>
       call { 
-        controllers_ProjektController_newProjekt13_invoker.call(ProjektController_2.newProjekt())
+        controllers_ProjektController_newProjekt13_invoker.call(ProjektController_3.newProjekt())
       }
   
     // @LINE:28
     case controllers_ProjektController_delete14_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_ProjektController_delete14_invoker.call(ProjektController_2.delete(id))
+        controllers_ProjektController_delete14_invoker.call(ProjektController_3.delete(id))
       }
   
     // @LINE:30
     case controllers_ProjektController_editProjekt15_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_ProjektController_editProjekt15_invoker.call(ProjektController_2.editProjekt(id))
+        controllers_ProjektController_editProjekt15_invoker.call(ProjektController_3.editProjekt(id))
       }
   
     // @LINE:31
     case controllers_ProjektController_update16_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_ProjektController_update16_invoker.call(ProjektController_2.update(id))
+        controllers_ProjektController_update16_invoker.call(ProjektController_3.update(id))
       }
   
     // @LINE:34
     case controllers_CustomerController_list17_route(params) =>
       call { 
-        controllers_CustomerController_list17_invoker.call(CustomerController_6.list())
+        controllers_CustomerController_list17_invoker.call(CustomerController_7.list())
       }
   
     // @LINE:36
     case controllers_CustomerController_show18_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_CustomerController_show18_invoker.call(CustomerController_6.show(id))
+        controllers_CustomerController_show18_invoker.call(CustomerController_7.show(id))
       }
   
     // @LINE:37
     case controllers_CustomerController_create19_route(params) =>
       call { 
-        controllers_CustomerController_create19_invoker.call(CustomerController_6.create())
+        controllers_CustomerController_create19_invoker.call(CustomerController_7.create())
       }
   
     // @LINE:38
     case controllers_CustomerController_update20_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_CustomerController_update20_invoker.call(CustomerController_6.update(id))
+        controllers_CustomerController_update20_invoker.call(CustomerController_7.update(id))
       }
   
     // @LINE:39
     case controllers_CustomerController_delete21_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_CustomerController_delete21_invoker.call(CustomerController_6.delete(id))
+        controllers_CustomerController_delete21_invoker.call(CustomerController_7.delete(id))
       }
   
     // @LINE:41
     case controllers_CustomerController_newCustomer22_route(params) =>
       call { 
-        controllers_CustomerController_newCustomer22_invoker.call(CustomerController_6.newCustomer())
+        controllers_CustomerController_newCustomer22_invoker.call(CustomerController_7.newCustomer())
       }
   
     // @LINE:42
     case controllers_CustomerController_delete23_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_CustomerController_delete23_invoker.call(CustomerController_6.delete(id))
+        controllers_CustomerController_delete23_invoker.call(CustomerController_7.delete(id))
       }
   
     // @LINE:43
     case controllers_CustomerController_editCustomer24_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_CustomerController_editCustomer24_invoker.call(CustomerController_6.editCustomer(id))
+        controllers_CustomerController_editCustomer24_invoker.call(CustomerController_7.editCustomer(id))
       }
   
     // @LINE:47
     case controllers_TaskController_list25_route(params) =>
       call { 
-        controllers_TaskController_list25_invoker.call(TaskController_4.list())
+        controllers_TaskController_list25_invoker.call(TaskController_5.list())
       }
   
     // @LINE:48
     case controllers_TaskController_create26_route(params) =>
       call { 
-        controllers_TaskController_create26_invoker.call(TaskController_4.create())
+        controllers_TaskController_create26_invoker.call(TaskController_5.create())
       }
   
     // @LINE:49
     case controllers_TaskController_newTask27_route(params) =>
       call { 
-        controllers_TaskController_newTask27_invoker.call(TaskController_4.newTask())
+        controllers_TaskController_newTask27_invoker.call(TaskController_5.newTask())
       }
   
     // @LINE:50
     case controllers_TaskController_show28_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_TaskController_show28_invoker.call(TaskController_4.show(id))
+        controllers_TaskController_show28_invoker.call(TaskController_5.show(id))
       }
   
     // @LINE:51
     case controllers_TaskController_delete29_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_TaskController_delete29_invoker.call(TaskController_4.delete(id))
+        controllers_TaskController_delete29_invoker.call(TaskController_5.delete(id))
       }
   
     // @LINE:53
     case controllers_TaskController_editTask30_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_TaskController_editTask30_invoker.call(TaskController_4.editTask(id))
+        controllers_TaskController_editTask30_invoker.call(TaskController_5.editTask(id))
       }
   
     // @LINE:54
     case controllers_TaskController_update31_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_TaskController_update31_invoker.call(TaskController_4.update(id))
-      }
-  
-    // @LINE:57
-    case controllers_LoginController_login32_route(params) =>
-      call { 
-        controllers_LoginController_login32_invoker.call(LoginController_5.login())
+        controllers_TaskController_update31_invoker.call(TaskController_5.update(id))
       }
   
     // @LINE:58
-    case controllers_LoginController_authenticate33_route(params) =>
+    case controllers_LoginController_login32_route(params) =>
       call { 
-        controllers_LoginController_authenticate33_invoker.call(LoginController_5.authenticate())
+        controllers_LoginController_login32_invoker.call(LoginController_6.login())
       }
   
-    // @LINE:61
-    case controllers_Assets_versioned34_route(params) =>
+    // @LINE:59
+    case controllers_LoginController_authenticate33_route(params) =>
+      call { 
+        controllers_LoginController_authenticate33_invoker.call(LoginController_6.authenticate())
+      }
+  
+    // @LINE:63
+    case controllers_SearchController_showSearch34_route(params) =>
+      call { 
+        controllers_SearchController_showSearch34_invoker.call(SearchController_0.showSearch())
+      }
+  
+    // @LINE:64
+    case controllers_SearchController_search35_route(params) =>
+      call { 
+        controllers_SearchController_search35_invoker.call(SearchController_0.search())
+      }
+  
+    // @LINE:67
+    case controllers_Assets_versioned36_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned34_invoker.call(Assets_3.versioned(path, file))
+        controllers_Assets_versioned36_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

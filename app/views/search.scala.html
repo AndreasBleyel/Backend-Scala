@@ -1,0 +1,15 @@
+@(searchForm: Form[models.Search])
+
+@main("Suche"){
+    <h1>Projektsuche</h1>
+
+    <div class="row">
+        <div class="col-xs-12" id="form">
+        @helper.form(action = routes.SearchController.search()){
+            @helper.inputText(searchForm("suchbegriff"), 'id -> "suchbegriff", '_label -> "Suchbegriff", 'class -> "form-control")
+
+            <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Suchen </button>
+        }
+        </div>
+    </div>
+}

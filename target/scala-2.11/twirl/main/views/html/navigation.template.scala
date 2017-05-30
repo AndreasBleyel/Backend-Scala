@@ -55,6 +55,15 @@ Seq[Any](format.raw/*1.4*/("""
     </div>
 </div>
 
+<div class="row">
+    <div class="col-xs-12">
+
+        <ul>
+            <li><a href="/search">Projekt suchen</a></li>
+        </ul>
+    </div>
+</div>
+
 """))
       }
     }
@@ -75,9 +84,9 @@ Seq[Any](format.raw/*1.4*/("""
 object navigation extends navigation_Scope0.navigation
               /*
                   -- GENERATED --
-                  DATE: Mon May 29 21:10:47 CEST 2017
+                  DATE: Tue May 30 23:10:32 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/navigation.scala.html
-                  HASH: 1fc95be73ab1ac56b9087dca9643463619a5653b
+                  HASH: 9a8034d2fb4e109dac62c32168bfc13c16685a2f
                   MATRIX: 748->1|844->3|872->5
                   LINES: 27->1|32->1|33->2
                   -- GENERATED --

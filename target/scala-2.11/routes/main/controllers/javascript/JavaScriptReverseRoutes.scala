@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/andi/Desktop/relationManyToMany-2/conf/routes
-// @DATE:Tue May 30 21:14:39 CEST 2017
+// @DATE:Tue May 30 23:10:32 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:61
+  // @LINE:67
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:61
+    // @LINE:67
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -231,7 +231,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:58
+    // @LINE:59
     def authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.authenticate",
       """
@@ -331,6 +331,36 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projekt"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:63
+  class ReverseSearchController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:63
+    def showSearch: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SearchController.showSearch",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "search"})
+        }
+      """
+    )
+  
+    // @LINE:64
+    def search: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SearchController.search",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "search"})
         }
       """
     )
