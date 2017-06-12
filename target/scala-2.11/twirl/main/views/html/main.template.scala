@@ -49,27 +49,21 @@ Seq[Any](format.raw/*7.32*/("""
         """),format.raw/*20.32*/("""
 
         """),format.raw/*22.9*/("""<div class="container">
+
             <div class="row">
-                <div class="col-xs-12 header">
                     """),_display_(/*25.22*/header()),format.raw/*25.30*/("""
-                """),format.raw/*26.17*/("""</div>
-            </div>
+            """),format.raw/*26.13*/("""</div>
             <div class="row">
-                <div class="col-xs-3 navigation">
-                    """),_display_(/*30.22*/navigation()),format.raw/*30.34*/("""
-                """),format.raw/*31.17*/("""</div>
-                <div class="col-xs-9 content">
-                    """),_display_(/*33.22*/content),format.raw/*33.29*/("""
-                """),format.raw/*34.17*/("""</div>
-            </div>
+                    """),_display_(/*28.22*/content),format.raw/*28.29*/("""
+            """),format.raw/*29.13*/("""</div>
 
 
         </div>
 
 
-        <script src=""""),_display_(/*41.23*/routes/*41.29*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*41.74*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*42.23*/routes/*42.29*/.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")),format.raw/*42.83*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*43.23*/routes/*43.29*/.Assets.versioned("javascripts/main.js")),format.raw/*43.69*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*35.23*/routes/*35.29*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*35.74*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*36.23*/routes/*36.29*/.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")),format.raw/*36.83*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*37.23*/routes/*37.29*/.Assets.versioned("javascripts/main.js")),format.raw/*37.69*/("""" type="text/javascript"></script>
     </body>
 </html>
 """))
@@ -97,11 +91,11 @@ Seq[Any](format.raw/*7.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Mon Jun 12 16:51:00 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/main.scala.html
-                  HASH: 9460ae5e603acd1381e99da6bdf32c60d78aa219
-                  MATRIX: 1002->260|1127->290|1155->292|1235->397|1271->406|1306->414|1332->419|1421->481|1436->487|1514->543|1597->599|1612->605|1675->646|1763->707|1778->713|1839->752|1901->876|1938->886|2087->1008|2116->1016|2161->1033|2315->1160|2348->1172|2393->1189|2495->1264|2523->1271|2568->1288|2662->1355|2677->1361|2743->1406|2827->1463|2842->1469|2917->1523|3001->1580|3016->1586|3077->1626
-                  LINES: 32->7|37->7|39->9|42->12|43->13|43->13|43->13|44->14|44->14|44->14|45->15|45->15|45->15|46->16|46->16|46->16|49->20|51->22|54->25|54->25|55->26|59->30|59->30|60->31|62->33|62->33|63->34|70->41|70->41|70->41|71->42|71->42|71->42|72->43|72->43|72->43
+                  HASH: 00947fb52cdb205ace4f48c79bb33cb92417042a
+                  MATRIX: 1002->260|1127->290|1155->292|1235->397|1271->406|1306->414|1332->419|1421->481|1436->487|1514->543|1597->599|1612->605|1675->646|1763->707|1778->713|1839->752|1901->876|1938->886|2041->962|2070->970|2111->983|2196->1041|2224->1048|2265->1061|2340->1109|2355->1115|2421->1160|2505->1217|2520->1223|2595->1277|2679->1334|2694->1340|2755->1380
+                  LINES: 32->7|37->7|39->9|42->12|43->13|43->13|43->13|44->14|44->14|44->14|45->15|45->15|45->15|46->16|46->16|46->16|49->20|51->22|54->25|54->25|55->26|57->28|57->28|58->29|64->35|64->35|64->35|65->36|65->36|65->36|66->37|66->37|66->37
                   -- GENERATED --
               */
           

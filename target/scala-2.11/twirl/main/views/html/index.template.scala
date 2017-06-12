@@ -31,9 +31,10 @@ class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Forma
 
 Seq[Any](format.raw/*1.4*/("""
 
-"""),_display_(/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
-  """),format.raw/*4.3*/("""<h1>Welcome to Play!</h1>
-""")))}),format.raw/*5.2*/("""
+"""),_display_(/*3.2*/main("¯\\_(ツ)_/¯")/*3.20*/ {_display_(Seq[Any](format.raw/*3.22*/("""
+  """),format.raw/*4.3*/("""<h1>WEB 15</h1>
+  <p>Engelberg Paula, Bleyel Andreas, 2017</p>
+""")))}),format.raw/*6.2*/("""
 """))
       }
     }
@@ -54,11 +55,11 @@ Seq[Any](format.raw/*1.4*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 17:19:11 CEST 2017
+                  DATE: Mon Jun 12 16:47:43 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/index.scala.html
-                  HASH: 63c48226b78076c97a429d8e34737e855bf3ef01
-                  MATRIX: 738->1|834->3|862->6|893->29|932->31|961->34|1017->61
-                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|36->5
+                  HASH: 4b3c540d32b1900fc241a508095ed9b6043f781f
+                  MATRIX: 738->1|834->3|862->6|888->24|927->26|956->29|1049->93
+                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|37->6
                   -- GENERATED --
               */
           

@@ -24,17 +24,72 @@ import play.mvc.Http.Context.Implicit._
 class header extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.4*/("""
-"""),format.raw/*2.1*/("""<div class="row">
-    <div class="col-xs-6">
-        <h1>Super Tool</h1>
-    </div>
-</div>"""))
+Seq[Any](format.raw/*1.1*/("""<nav class="navbar navbar-default">
+    <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/main">Super Tool</a>
+        </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mitarbeiter<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user">Alle Mitarbeiter</a></li>
+                        <li><a href="/adduser">Neuer Mitarbeiter</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projekte<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/projekt">Alle Projekte</a></li>
+                        <li><a href="/addprojekt">Neues Projekt</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kunden<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/customer">Alle Kunden</a></li>
+                        <li><a href="/addcustomer">Neuer Kunde</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/task">Alle Tasks</a></li>
+                        <li><a href="/addtask">Neuer Task</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/search">Projekt suchen</a></li>
+
+                <li><a href="/login">Logout</a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>"""))
       }
     }
   }
@@ -54,11 +109,11 @@ Seq[Any](format.raw/*1.4*/("""
 object header extends header_Scope0.header
               /*
                   -- GENERATED --
-                  DATE: Sun May 28 20:55:07 CEST 2017
+                  DATE: Mon Jun 12 16:44:32 CEST 2017
                   SOURCE: /home/andi/Desktop/relationManyToMany-2/app/views/header.scala.html
-                  HASH: b7015c8a76e491fc2941798229d31d185f9741fd
-                  MATRIX: 740->1|836->3|864->5
-                  LINES: 27->1|32->1|33->2
+                  HASH: 0545dbadb62b79ec08d8be209f3a5595fca160e7
+                  MATRIX: 829->0
+                  LINES: 32->1
                   -- GENERATED --
               */
           
